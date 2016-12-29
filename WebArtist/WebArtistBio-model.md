@@ -15,19 +15,19 @@ Literal Type: ``
 
 
 ## PyTransforms
-#### _ObjectID_
+#### _URI_
 From column: _ConstituentID_
 ``` python
-return 'webartist/'+getValue("ConstituentID")
+return 'webartist/id/'+getValue("ConstituentID")
 ```
 
 #### _BioURI_
-From column: _ObjectID_
+From column: _URI_
 ``` python
-return 'webartist/'+getValue("ConstituentID")+'/bio'
+return getValue("URI")+'/bio'
 ```
 
-#### _BioDescVal_
+#### _BioDspValue_
 From column: _BioDsp_
 ``` python
 return getValue("BioDsp")
@@ -39,10 +39,10 @@ return getValue("BioDsp")
 ## Semantic Types
 | Column | Property | Class |
 |  ----- | -------- | ----- |
-| _BioDescVal_ | `rdf:value` | `crm:E33_Linguistic_Object1`|
 | _BioDsp_ | `dc:description` | `crm:E39_Actor1`|
+| _BioDspValue_ | `rdf:value` | `crm:E33_Linguistic_Object1`|
 | _BioURI_ | `uri` | `crm:E33_Linguistic_Object1`|
-| _ObjectID_ | `uri` | `crm:E39_Actor1`|
+| _URI_ | `uri` | `crm:E39_Actor1`|
 
 
 ## Links
