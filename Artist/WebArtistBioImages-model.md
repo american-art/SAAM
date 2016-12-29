@@ -8,13 +8,13 @@
 #### _URI_
 From column: _ConstituentID_
 ``` python
-return 'webartist/id/'+getValue("ConstituentID")
+return 'artist/id/'+getValue("ConstituentID")
 ```
 
 #### _ImageURI_
 From column: _URI_
 ``` python
-return 'webartist/id/'+getValue("ConstituentID")+'/image'
+return getValue("URI")+'/image'
 ```
 
 
