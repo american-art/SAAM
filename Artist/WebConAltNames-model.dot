@@ -11,6 +11,7 @@ n5[shape="plaintext",style="filled",fillcolor="gold",label="URI"];
 n6[shape="plaintext",style="filled",fillcolor="gold",label="AltNameURI"];
 n7[shape="plaintext",style="filled",fillcolor="gold",label="AltName"];
 n8[shape="plaintext",style="filled",fillcolor="gold",label="AltNameTypeURI"];
+n9[shape="plaintext",style="filled",fillcolor="gold",label="NameType"];
 }
 n2 -> n3[color="brown",fontcolor="black",label="P131_is_identified_by"]
 n3 -> n4[color="brown",fontcolor="black",label="P2_has_type"]
@@ -18,4 +19,5 @@ n2 -> n5[color="brown",fontcolor="black",label="classLink"]
 n3 -> n6[color="brown",fontcolor="black",label="classLink"]
 n3 -> n7[color="brown",fontcolor="black",label="value"]
 n4 -> n8[color="brown",fontcolor="black",label="classLink"]
+n4 -> n9[color="brown",fontcolor="black",label="prefLabel"]
 }
