@@ -38,6 +38,7 @@ return getValue("URI")+'/altname/type'
 | _AltName_ | `rdf:value` | `crm:E82_Actor_Appellation1`|
 | _AltNameTypeURI_ | `uri` | `crm:E55_Type1`|
 | _AltNameURI_ | `uri` | `crm:E82_Actor_Appellation1`|
+| _NameType_ | `skos:prefLabel` | `crm:E55_Type1`|
 | _URI_ | `uri` | `crm:E39_Actor1`|
 
 
