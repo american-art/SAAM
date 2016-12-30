@@ -10,11 +10,11 @@ n4[style="filled",color="white",fillcolor="lightgray",label="E64_End_of_Existenc
 n5[style="filled",color="white",fillcolor="lightgray",label="E52_Time-Span2"];
 n6[style="filled",color="white",fillcolor="lightgray",label="E52_Time-Span1"];
 n7[shape="plaintext",style="filled",fillcolor="gold",label="BirthDisplayDate"];
-n8[shape="plaintext",style="filled",fillcolor="gold",label="BirthURI"];
+n8[shape="plaintext",style="filled",fillcolor="gold",label="URI"];
 n9[shape="plaintext",style="filled",fillcolor="gold",label="DeathURI"];
-n10[shape="plaintext",style="filled",fillcolor="gold",label="DeathTimeURI"];
-n11[shape="plaintext",style="filled",fillcolor="gold",label="DeathDisplayDate"];
-n12[shape="plaintext",style="filled",fillcolor="gold",label="URI"];
+n10[shape="plaintext",style="filled",fillcolor="gold",label="DeathDisplayDate"];
+n11[shape="plaintext",style="filled",fillcolor="gold",label="DeathTimeURI"];
+n12[shape="plaintext",style="filled",fillcolor="gold",label="BirthURI"];
 n13[shape="plaintext",style="filled",fillcolor="gold",label="BirthTimeURI"];
 }
 n2 -> n3[color="brown",fontcolor="black",label="P92i_was_brought_into_existence_by"]
@@ -22,10 +22,10 @@ n2 -> n4[color="brown",fontcolor="black",label="P92i_was_brought_into_existence_
 n3 -> n5[color="brown",fontcolor="black",label="P4_has_time-span"]
 n4 -> n6[color="brown",fontcolor="black",label="P4_has_time-span"]
 n5 -> n7[color="brown",fontcolor="black",label="label"]
-n3 -> n8[color="brown",fontcolor="black",label="classLink"]
+n2 -> n8[color="brown",fontcolor="black",label="classLink"]
 n4 -> n9[color="brown",fontcolor="black",label="classLink"]
-n6 -> n10[color="brown",fontcolor="black",label="classLink"]
-n6 -> n11[color="brown",fontcolor="black",label="label"]
-n2 -> n12[color="brown",fontcolor="black",label="classLink"]
+n6 -> n10[color="brown",fontcolor="black",label="label"]
+n6 -> n11[color="brown",fontcolor="black",label="classLink"]
+n3 -> n12[color="brown",fontcolor="black",label="classLink"]
 n5 -> n13[color="brown",fontcolor="black",label="classLink"]
 }
