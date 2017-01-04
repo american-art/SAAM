@@ -1,0 +1,1210 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix vs: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wot: <http://xmlns.com/wot/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1b5lkk3thx1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "WebConDates.csv" ;
+	km-dev:modelPublicationTime "1483563732913"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"ConstituentID\"}],[{\"columnName\":\"DateBegSearch\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"DeathLatest\"}],[{\"columnName\":\"DateDescription\"}],[{\"columnName\":\"URI\"}],[{\"columnName\":\"DateBegSearch\"}],[{\"columnName\":\"DeathTimeURI\"}],[{\"columnName\":\"DeathURI\"}]]" ;
+	km-dev:hasModelLabel "WebConDatesDeath" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"commandName\": \"OrganizeColumnsCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"orderedColumns\",
+                \"type\": \"orderedColumns\",
+                \"value\": [
+                    {
+                        \"visible\": false,
+                        \"name\": \"ConDateID\",
+                        \"id\": [{\"columnName\": \"ConDateID\"}]
+                    },
+                    {
+                        \"visible\": true,
+                        \"name\": \"ConstituentID\",
+                        \"id\": [{\"columnName\": \"ConstituentID\"}]
+                    },
+                    {
+                        \"visible\": true,
+                        \"name\": \"DateDescription\",
+                        \"id\": [{\"columnName\": \"DateDescription\"}]
+                    },
+                    {
+                        \"visible\": true,
+                        \"name\": \"DateBegSearch\",
+                        \"id\": [{\"columnName\": \"DateBegSearch\"}]
+                    },
+                    {
+                        \"visible\": false,
+                        \"name\": \"DateEndSearch\",
+                        \"id\": [{\"columnName\": \"DateEndSearch\"}]
+                    },
+                    {
+                        \"visible\": false,
+                        \"name\": \"Remarks\",
+                        \"id\": [{\"columnName\": \"Remarks\"}]
+                    },
+                    {
+                        \"visible\": false,
+                        \"name\": \"LoginID\",
+                        \"id\": [{\"columnName\": \"LoginID\"}]
+                    },
+                    {
+                        \"visible\": false,
+                        \"name\": \"EnteredDate\",
+                        \"id\": [{\"columnName\": \"EnteredDate\"}]
+                    },
+                    {
+                        \"visible\": false,
+                        \"name\": \"SysTimeStamp\",
+                        \"id\": [{\"columnName\": \"SysTimeStamp\"}]
+                    },
+                    {
+                        \"visible\": false,
+                        \"name\": \"DayBegSearch\",
+                        \"id\": [{\"columnName\": \"DayBegSearch\"}]
+                    },
+                    {
+                        \"visible\": false,
+                        \"name\": \"DayEndSearch\",
+                        \"id\": [{\"columnName\": \"DayEndSearch\"}]
+                    },
+                    {
+                        \"visible\": false,
+                        \"name\": \"MonthBegSearch\",
+                        \"id\": [{\"columnName\": \"MonthBegSearch\"}]
+                    },
+                    {
+                        \"visible\": false,
+                        \"name\": \"MonthEndSearch\",
+                        \"id\": [{\"columnName\": \"MonthEndSearch\"}]
+                    }
+                ]
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [
+            \"Transformation\",
+            \"IgnoreInBatch\"
+        ]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"ConstituentID\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"URI\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return 'artist/id/'+getValue(\\\"ConstituentID\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"ConstituentID\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"URI\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"DateBegSearch\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"DeathLatest\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return getValue(\\\"DateBegSearch\\\")\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DateBegSearch\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DeathLatest\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"URI\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"DeathURI\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return getValue(\\\"URI\\\")+'/death'\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"URI\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DeathURI\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SubmitPythonTransformationCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"DeathURI\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"type\": \"other\",
+                \"value\": \"DeathTimeURI\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"type\": \"other\",
+                \"value\": \"return getValue(\\\"URI\\\")+'/death/time'\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"type\": \"other\",
+                \"value\": \"false\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"URI\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DeathTimeURI\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"WebConDatesDeath\",
+                    \"hasBaseURI\": false,
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"SetWorksheetPropertiesCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"properties\",
+                \"type\": \"other\",
+                \"value\": {
+                    \"graphLabel\": \"\",
+                    \"hasBaseURI\": false,
+                    \"hasGithubURL\": true,
+                    \"GithubURL\": \"https://github.com/american-art/SAAM/tree/master/Artist\",
+                    \"baseURI\": \"\",
+                    \"hasPrefix\": false,
+                    \"hasServiceProperties\": false
+                }
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Transformation\"]
+    },
+    {
+        \"commandName\": \"OperateSelectionCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"DateDescription\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"pythonCode\",
+                \"type\": \"other\",
+                \"value\": \"return getValue(\\\"DateDescription\\\") != \\\"Death Date\\\"\"
+            },
+            {
+                \"name\": \"operation\",
+                \"type\": \"other\",
+                \"value\": \"Union\"
+            },
+            {
+                \"name\": \"onError\",
+                \"type\": \"other\",
+                \"value\": \"true\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DateDescription\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"Selection\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"URI\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor\",
+                    \"DomainId\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"crm:E39_Actor1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"URI\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"URI\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"DeathURI\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence\",
+                    \"DomainId\": \"http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"crm:E64_End_of_Existence1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DeathURI\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DeathURI\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetMetaPropertyCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"DeathTimeURI\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"type\": \"other\",
+                \"value\": \"isUriOfClass\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"type\": \"other\",
+                \"value\": \"http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"type\": \"other\",
+                \"value\": \"http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span1\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span\",
+                    \"DomainId\": \"http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"DomainLabel\": \"crm:E52_Time-Span1 (add)\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DeathTimeURI\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DeathTimeURI\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"DateBegSearch\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span\",
+                    \"DomainId\": \"http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.cidoc-crm.org/cidoc-crm/P82a_begin_of_the_begin\",
+                    \"DomainLabel\": \"crm:E52_Time-Span1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DateBegSearch\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DateBegSearch\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"SetSemanticTypeCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"type\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"DeathLatest\"}]
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"DomainUri\": \"http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span\",
+                    \"DomainId\": \"http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span1\",
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://www.cidoc-crm.org/cidoc-crm/P82b_end_of_the_end\",
+                    \"DomainLabel\": \"crm:E52_Time-Span1\"
+                }]
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"type\": \"other\",
+                \"value\": true
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"language\",
+                \"type\": \"other\",
+                \"value\": \"\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DeathLatest\\\"}]}]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"DeathLatest\\\"}]}]\"
+            }
+        ],
+        \"tags\": [\"SemanticType\"]
+    },
+    {
+        \"commandName\": \"ChangeInternalNodeLinksCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"edgeTargetId\": \"http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence1\",
+                    \"edgeId\": \"http://www.cidoc-crm.org/cidoc-crm/P92i_was_brought_into_existence_by\",
+                    \"edgeSourceId\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor1\"
+                }]
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"type\": \"other\",
+                \"value\": \"WSP6:WS5AL\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"type\": \"other\",
+                \"value\": []
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"ChangeInternalNodeLinksCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"edgeTargetId\": \"http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence1\",
+                    \"edgeId\": \"http://www.cidoc-crm.org/cidoc-crm/P93i_was_taken_out_of_existence_by\",
+                    \"edgeSourceId\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor1\"
+                }]
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"type\": \"other\",
+                \"value\": \"WSP6:WS5AL\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"type\": \"other\",
+                \"value\": []
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"ChangeInternalNodeLinksCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"type\": \"other\",
+                \"value\": []
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"type\": \"other\",
+                \"value\": \"WSP6:WS5AL\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"edgeTargetId\": \"http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence1\",
+                    \"edgeId\": \"http://www.cidoc-crm.org/cidoc-crm/P93i_was_taken_out_of_existence_by\",
+                    \"edgeTargetUri\": \"http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence\",
+                    \"edgeSourceId\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor1\",
+                    \"edgeSourceUri\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor\"
+                }]
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"ChangeInternalNodeLinksCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"edgeTargetId\": \"http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence1\",
+                    \"edgeId\": \"http://www.cidoc-crm.org/cidoc-crm/P92i_was_brought_into_existence_by\",
+                    \"edgeSourceId\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor1\"
+                }]
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"type\": \"other\",
+                \"value\": \"WSP6:WS5AL\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"type\": \"other\",
+                \"value\": []
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"ChangeInternalNodeLinksCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"edgeTargetId\": \"http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span1\",
+                    \"edgeId\": \"http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span\",
+                    \"edgeSourceId\": \"http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence1\"
+                }]
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"type\": \"other\",
+                \"value\": \"WSP6:WS5AL\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"type\": \"other\",
+                \"value\": []
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    },
+    {
+        \"commandName\": \"ChangeInternalNodeLinksCommand\",
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"type\": \"worksheetId\",
+                \"value\": \"W\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"type\": \"other\",
+                \"value\": \"DEFAULT_TEST\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"type\": \"other\",
+                \"value\": []
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"type\": \"other\",
+                \"value\": \"WSP6:WS5AL\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"type\": \"other\",
+                \"value\": [{
+                    \"edgeTargetId\": \"http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span1\",
+                    \"edgeId\": \"http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span\",
+                    \"edgeTargetUri\": \"http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span\",
+                    \"edgeSourceId\": \"http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence1\",
+                    \"edgeSourceUri\": \"http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence\"
+                }]
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"type\": \"hNodeIdList\",
+                \"value\": \"[]\"
+            }
+        ],
+        \"tags\": [\"Modeling\"]
+    }
+]""" .
+
+km-dev:TriplesMap_d64d5bdb-901a-4117-a84a-6d8cb28a4474 a rr:TriplesMap .
+
+_:node1b5lkk3thx1 km-dev:hasTriplesMap km-dev:TriplesMap_d64d5bdb-901a-4117-a84a-6d8cb28a4474 .
+
+km-dev:TriplesMap_d64d5bdb-901a-4117-a84a-6d8cb28a4474 km-dev:isPartOfMapping _:node1b5lkk3thx1 .
+
+_:node1b5lkk3thx2 rr:tableName "WebConDates.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1b5lkk3thx1 .
+
+_:node1b5lkk3thx1 km-dev:hasLogicalTable _:node1b5lkk3thx2 .
+
+km-dev:TriplesMap_d64d5bdb-901a-4117-a84a-6d8cb28a4474 rr:logicalTable _:node1b5lkk3thx2 ;
+	rr:subjectMap _:node1b5lkk3thx3 .
+
+_:node1b5lkk3thx1 km-dev:hasSubjectMap _:node1b5lkk3thx3 .
+
+_:node1b5lkk3thx3 km-dev:isPartOfMapping _:node1b5lkk3thx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.cidoc-crm.org/cidoc-crm/E39_Actor1" ;
+	rr:class crm:E39_Actor ;
+	rr:template "{URI}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_452fb6c5-9dfa-41e4-b4e8-9c967eec0822 rr:predicate crm:P93i_was_taken_out_of_existence_by .
+
+km-dev:RefObjectMap_3a1e1b3f-8e77-4ea2-9985-99d170f8c55c a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_6ffb3ca8-f9ad-4a49-92cf-8ec0cf0d5a51 ;
+	km-dev:isPartOfMapping _:node1b5lkk3thx1 .
+
+_:node1b5lkk3thx1 km-dev:hasObjectMap km-dev:RefObjectMap_3a1e1b3f-8e77-4ea2-9985-99d170f8c55c .
+
+km-dev:PredicateObjectMap_452fb6c5-9dfa-41e4-b4e8-9c967eec0822 rr:objectMap km-dev:RefObjectMap_3a1e1b3f-8e77-4ea2-9985-99d170f8c55c .
+
+km-dev:TriplesMap_d64d5bdb-901a-4117-a84a-6d8cb28a4474 rr:predicateObjectMap km-dev:PredicateObjectMap_452fb6c5-9dfa-41e4-b4e8-9c967eec0822 .
+
+km-dev:PredicateObjectMap_452fb6c5-9dfa-41e4-b4e8-9c967eec0822 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b5lkk3thx1 .
+
+_:node1b5lkk3thx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_452fb6c5-9dfa-41e4-b4e8-9c967eec0822 .
+
+km-dev:TriplesMap_6ffb3ca8-f9ad-4a49-92cf-8ec0cf0d5a51 a rr:TriplesMap .
+
+_:node1b5lkk3thx1 km-dev:hasTriplesMap km-dev:TriplesMap_6ffb3ca8-f9ad-4a49-92cf-8ec0cf0d5a51 .
+
+km-dev:TriplesMap_6ffb3ca8-f9ad-4a49-92cf-8ec0cf0d5a51 km-dev:isPartOfMapping _:node1b5lkk3thx1 .
+
+_:node1b5lkk3thx4 rr:tableName "WebConDates.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1b5lkk3thx1 .
+
+_:node1b5lkk3thx1 km-dev:hasLogicalTable _:node1b5lkk3thx4 .
+
+km-dev:TriplesMap_6ffb3ca8-f9ad-4a49-92cf-8ec0cf0d5a51 rr:logicalTable _:node1b5lkk3thx4 ;
+	rr:subjectMap _:node1b5lkk3thx5 .
+
+_:node1b5lkk3thx1 km-dev:hasSubjectMap _:node1b5lkk3thx5 .
+
+_:node1b5lkk3thx5 km-dev:isPartOfMapping _:node1b5lkk3thx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.cidoc-crm.org/cidoc-crm/E64_End_of_Existence1" ;
+	rr:class crm:E64_End_of_Existence ;
+	rr:template "{DeathURI}" .
+
+km-dev:PredicateObjectMap_bf23056f-407e-4b35-a7f0-24f182f599d5 rr:predicate crm:P4_has_time-span .
+
+km-dev:RefObjectMap_4b92d2b7-6897-4ca3-a0aa-bd57df246a7a a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_6366efe2-3d8f-4658-8ed5-8ef35d0e2147 ;
+	km-dev:isPartOfMapping _:node1b5lkk3thx1 .
+
+_:node1b5lkk3thx1 km-dev:hasObjectMap km-dev:RefObjectMap_4b92d2b7-6897-4ca3-a0aa-bd57df246a7a .
+
+km-dev:PredicateObjectMap_bf23056f-407e-4b35-a7f0-24f182f599d5 rr:objectMap km-dev:RefObjectMap_4b92d2b7-6897-4ca3-a0aa-bd57df246a7a .
+
+km-dev:TriplesMap_6ffb3ca8-f9ad-4a49-92cf-8ec0cf0d5a51 rr:predicateObjectMap km-dev:PredicateObjectMap_bf23056f-407e-4b35-a7f0-24f182f599d5 .
+
+km-dev:PredicateObjectMap_bf23056f-407e-4b35-a7f0-24f182f599d5 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b5lkk3thx1 .
+
+_:node1b5lkk3thx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_bf23056f-407e-4b35-a7f0-24f182f599d5 .
+
+km-dev:TriplesMap_6366efe2-3d8f-4658-8ed5-8ef35d0e2147 a rr:TriplesMap .
+
+_:node1b5lkk3thx1 km-dev:hasTriplesMap km-dev:TriplesMap_6366efe2-3d8f-4658-8ed5-8ef35d0e2147 .
+
+km-dev:TriplesMap_6366efe2-3d8f-4658-8ed5-8ef35d0e2147 km-dev:isPartOfMapping _:node1b5lkk3thx1 .
+
+_:node1b5lkk3thx6 rr:tableName "WebConDates.csv" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1b5lkk3thx1 .
+
+_:node1b5lkk3thx1 km-dev:hasLogicalTable _:node1b5lkk3thx6 .
+
+km-dev:TriplesMap_6366efe2-3d8f-4658-8ed5-8ef35d0e2147 rr:logicalTable _:node1b5lkk3thx6 ;
+	rr:subjectMap _:node1b5lkk3thx7 .
+
+_:node1b5lkk3thx1 km-dev:hasSubjectMap _:node1b5lkk3thx7 .
+
+_:node1b5lkk3thx7 km-dev:isPartOfMapping _:node1b5lkk3thx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span1" ;
+	rr:class crm:E52_Time-Span ;
+	rr:template "{DeathTimeURI}" .
+
+km-dev:PredicateObjectMap_2874a113-d323-4e02-984b-3397e905effc rr:predicate crm:P82b_end_of_the_end .
+
+_:node1b5lkk3thx8 rr:column "DateBegSearch" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b5lkk3thx1 .
+
+_:node1b5lkk3thx1 km-dev:hasObjectMap _:node1b5lkk3thx8 .
+
+km-dev:PredicateObjectMap_2874a113-d323-4e02-984b-3397e905effc rr:objectMap _:node1b5lkk3thx8 .
+
+km-dev:TriplesMap_6366efe2-3d8f-4658-8ed5-8ef35d0e2147 rr:predicateObjectMap km-dev:PredicateObjectMap_2874a113-d323-4e02-984b-3397e905effc .
+
+km-dev:PredicateObjectMap_2874a113-d323-4e02-984b-3397e905effc a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b5lkk3thx1 .
+
+_:node1b5lkk3thx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2874a113-d323-4e02-984b-3397e905effc .
+
+km-dev:PredicateObjectMap_99918da8-f7d3-464a-9a70-9da1a7342b19 rr:predicate crm:P82a_begin_of_the_begin .
+
+_:node1b5lkk3thx9 rr:column "DateBegSearch" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b5lkk3thx1 .
+
+_:node1b5lkk3thx1 km-dev:hasObjectMap _:node1b5lkk3thx9 .
+
+km-dev:PredicateObjectMap_99918da8-f7d3-464a-9a70-9da1a7342b19 rr:objectMap _:node1b5lkk3thx9 .
+
+km-dev:TriplesMap_6366efe2-3d8f-4658-8ed5-8ef35d0e2147 rr:predicateObjectMap km-dev:PredicateObjectMap_99918da8-f7d3-464a-9a70-9da1a7342b19 .
+
+km-dev:PredicateObjectMap_99918da8-f7d3-464a-9a70-9da1a7342b19 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b5lkk3thx1 .
+
+_:node1b5lkk3thx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_99918da8-f7d3-464a-9a70-9da1a7342b19 .
