@@ -13,6 +13,11 @@ Literal Type: ``
 <br/>Language: ``
 <br/>isUri: `true`
 
+#### Literal Node: `http://vocab.getty.edu/aat/300264237`
+Literal Type: ``
+<br/>Language: ``
+<br/>isUri: `true`
+
 
 ## PyTransforms
 #### _URI_
@@ -57,6 +62,12 @@ From column: _CreationTimeURI_
 return getValue("URI")+'/title'
 ```
 
+#### _MediumURI_
+From column: _TitleURI_
+``` python
+return getValue("URI")+'/medium'
+```
+
 
 ## Selections
 
@@ -68,6 +79,8 @@ return getValue("URI")+'/title'
 | _ClassificationURI_ | `uri` | `crm:E17_Type_Assignment1`|
 | _CreationTimeURI_ | `uri` | `crm:E52_Time-Span1`|
 | _CreationURI_ | `uri` | `crm:E12_Production1`|
+| _Medium_ | `rdf:value` | `crm:E33_Linguistic_Object1`|
+| _MediumURI_ | `uri` | `crm:E33_Linguistic_Object1`|
 | _PrimaryTitle_ | `rdfs:label` | `crm:E22_Man-Made_Object1`|
 | _Title_ | `rdf:value` | `crm:E35_Title1`|
 | _TitleURI_ | `uri` | `crm:E35_Title1`|
@@ -84,6 +97,8 @@ return getValue("URI")+'/title'
 | `crm:E17_Type_Assignment1` | `crm:P21_had_general_purpose` | `xsd:http://vocab.getty.edu/aat/300179869`|
 | `crm:E22_Man-Made_Object1` | `crm:P108i_was_produced_by` | `crm:E12_Production1`|
 | `crm:E22_Man-Made_Object1` | `crm:P41i_was_classified_by` | `crm:E17_Type_Assignment1`|
+| `crm:E22_Man-Made_Object1` | `crm:P67i_is_referred_to_by` | `crm:E33_Linguistic_Object1`|
 | `crm:E22_Man-Made_Object1` | `crm:P102_has_title` | `crm:E35_Title1`|
 | `crm:E22_Man-Made_Object1` | `crm:P2_has_type` | `crm:E55_Type1`|
+| `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300264237`|
 | `crm:E35_Title1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300404670`|
