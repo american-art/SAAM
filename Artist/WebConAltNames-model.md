@@ -3,6 +3,26 @@
 ## Add Column
 
 ## Add Node/Literal
+#### Literal Node: `http://vocab.getty.edu/aat/300404651`
+Literal Type: ``
+<br/>Language: ``
+<br/>isUri: `true`
+
+#### Literal Node: `http://vocab.getty.edu/aat/300404652`
+Literal Type: ``
+<br/>Language: ``
+<br/>isUri: `true`
+
+#### Literal Node: `http://vocab.getty.edu/aat/300404845`
+Literal Type: ``
+<br/>Language: ``
+<br/>isUri: `true`
+
+#### Literal Node: `http://vocab.getty.edu/aat/300404662`
+Literal Type: ``
+<br/>Language: ``
+<br/>isUri: `true`
+
 
 ## PyTransforms
 #### _AltName_
@@ -95,6 +115,10 @@ return getValue("URI")+'/altname/suffix/type'
 | _AltSuffixTypeURI_ | `uri` | `crm:E55_Type5`|
 | _AltSuffixURI_ | `uri` | `crm:E82_Actor_Appellation5`|
 | _FirstName_ | `rdf:value` | `crm:E82_Actor_Appellation2`|
+| _LastName_ | `rdf:value` | `crm:E82_Actor_Appellation3`|
+| _NameTitle_ | `rdf:value` | `crm:E82_Actor_Appellation4`|
+| _NameType_ | `skos:prefLabel` | `crm:E55_Type1`|
+| _Suffix_ | `rdf:value` | `crm:E82_Actor_Appellation5`|
 | _URI_ | `uri` | `crm:E39_Actor1`|
 
 
@@ -102,6 +126,10 @@ return getValue("URI")+'/altname/suffix/type'
 | From | Property | To |
 |  --- | -------- | ---|
 | `crm:E39_Actor1` | `crm:P131_is_identified_by` | `crm:E82_Actor_Appellation1`|
+| `crm:E55_Type2` | `skos:broadMatch` | `xsd:http://vocab.getty.edu/aat/300404651`|
+| `crm:E55_Type3` | `skos:broadMatch` | `xsd:http://vocab.getty.edu/aat/300404652`|
+| `crm:E55_Type4` | `skos:broadMatch` | `xsd:http://vocab.getty.edu/aat/300404845`|
+| `crm:E55_Type5` | `skos:broadMatch` | `xsd:http://vocab.getty.edu/aat/300404662`|
 | `crm:E82_Actor_Appellation1` | `crm:P2_has_type` | `crm:E55_Type1`|
 | `crm:E82_Actor_Appellation1` | `crm:P106_is_composed_of` | `crm:E82_Actor_Appellation2`|
 | `crm:E82_Actor_Appellation1` | `crm:P106_is_composed_of` | `crm:E82_Actor_Appellation3`|
