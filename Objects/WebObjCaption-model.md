@@ -1,4 +1,4 @@
-# WebObjCaption.csv
+# WebObjCaption.json
 
 ## Add Column
 
@@ -35,26 +35,26 @@ Literal Type: ``
 
 
 ## PyTransforms
-#### _URI_
+#### _ObjectURI_
 From column: _ObjectID_
 ``` python
 return 'object/id/'+getValue("ObjectID")
 ```
 
 #### _ClassificationURI_
-From column: _URI_
+From column: _ObjectURI_
 ``` python
 return getValue("URI")+'/classification'
 ```
 
-#### _ClassificationTypeURI_
+#### _NotInUse_
 From column: _ClassificationURI_
 ``` python
 return getValue("URI")+'/classification/type'
 ```
 
 #### _CreationURI_
-From column: _ClassificationTypeURI_
+From column: _NotInUse_
 ``` python
 return getValue("URI")+'/creation'
 ```
@@ -110,13 +110,22 @@ return getValue("URI")+'/image/rights'
 #### _website_
 From column: _ImageRightsURI_
 ``` python
-return getValue("URI")+'/website'
+return getValue("objectDetailsWebPage")
 ```
 
 #### _AlternateWebsiteURI_
 From column: _website_
 ``` python
 return getValue("URI")+'/altwebsite'
+```
+
+#### _ClassificationTypeURI_
+From column: _NotInUse_
+``` python
+s = getValue("Classification")
+if getValue("SubClassification"):
+    s += "--"+getValue("SubClassification")
+return AATTerm.get_aat_uri("saam",s)
 ```
 
 
@@ -140,10 +149,10 @@ return getValue("URI")+'/altwebsite'
 | _ImageURI_ | `uri` | `crm:E38_Image1`|
 | _Medium_ | `rdf:value` | `crm:E33_Linguistic_Object1`|
 | _MediumURI_ | `uri` | `crm:E33_Linguistic_Object1`|
+| _ObjectURI_ | `uri` | `crm:E22_Man-Made_Object1`|
 | _PrimaryTitle_ | `rdfs:label` | `crm:E22_Man-Made_Object1`|
 | _Title_ | `rdf:value` | `crm:E35_Title1`|
 | _TitleURI_ | `uri` | `crm:E35_Title1`|
-| _URI_ | `uri` | `crm:E22_Man-Made_Object1`|
 | _datebegin_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
 | _dateend_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
 | _linkedDataLink_ | `rdfs:label` | `foaf:Document2`|
