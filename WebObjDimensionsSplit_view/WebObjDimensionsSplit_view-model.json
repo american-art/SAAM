@@ -4,78 +4,78 @@
     "description": null,
     "sourceColumns": [
         {
-            "id": "HN1922",
-            "hNodeId": "HN1922",
+            "id": "HN1794",
+            "hNodeId": "HN1794",
+            "columnName": "DimensionUnit"
+        },
+        {
+            "id": "HN1808",
+            "hNodeId": "HN1808",
             "columnName": "PartURI"
         },
         {
-            "id": "HN1912",
-            "hNodeId": "HN1912",
-            "columnName": "TypeURI"
-        },
-        {
-            "id": "HN1899",
-            "hNodeId": "HN1899",
-            "columnName": "ObjectURI"
-        },
-        {
-            "id": "HN1917",
-            "hNodeId": "HN1917",
-            "columnName": "DimensionURI"
-        },
-        {
-            "id": "HN1904",
-            "hNodeId": "HN1904",
+            "id": "HN1790",
+            "hNodeId": "HN1790",
             "columnName": "DimensionType"
         },
         {
-            "id": "HN1919",
-            "hNodeId": "HN1919",
+            "id": "HN1805",
+            "hNodeId": "HN1805",
             "columnName": "Element"
         },
         {
-            "id": "HN1914",
-            "hNodeId": "HN1914",
+            "id": "HN1803",
+            "hNodeId": "HN1803",
+            "columnName": "DimensionURI"
+        },
+        {
+            "id": "HN1785",
+            "hNodeId": "HN1785",
+            "columnName": "ObjectURI"
+        },
+        {
+            "id": "HN1800",
+            "hNodeId": "HN1800",
             "columnName": "value"
         },
         {
-            "id": "HN1908",
-            "hNodeId": "HN1908",
-            "columnName": "DimensionUnit"
+            "id": "HN1798",
+            "hNodeId": "HN1798",
+            "columnName": "TypeURI"
         }
     ],
     "mappingToSourceColumns": [
         {
-            "id": "HN1922",
-            "sourceColumnId": "HN1922"
+            "id": "HN1794",
+            "sourceColumnId": "HN1794"
         },
         {
-            "id": "HN1912",
-            "sourceColumnId": "HN1912"
+            "id": "HN1808",
+            "sourceColumnId": "HN1808"
         },
         {
-            "id": "HN1899",
-            "sourceColumnId": "HN1899"
+            "id": "HN1790",
+            "sourceColumnId": "HN1790"
         },
         {
-            "id": "HN1904",
-            "sourceColumnId": "HN1904"
+            "id": "HN1805",
+            "sourceColumnId": "HN1805"
         },
         {
-            "id": "HN1917",
-            "sourceColumnId": "HN1917"
+            "id": "HN1803",
+            "sourceColumnId": "HN1803"
         },
         {
-            "id": "HN1919",
-            "sourceColumnId": "HN1919"
+            "id": "HN1785",
+            "sourceColumnId": "HN1785"
         },
         {
-            "id": "HN1914",
-            "sourceColumnId": "HN1914"
+            "id": "HN1800",
+            "sourceColumnId": "HN1800"
         },
         {
-            "id": "HN1908",
-            "sourceColumnId": "HN1908"
+            "id": "HN1798",
+            "sourceColumnId": "HN1798"
         }
     ],
     "graph": {
@@ -117,19 +117,48 @@
                 "modelIds": null
             },
             {
-                "id": "HN1922",
+                "id": "HN1794",
                 "label": {
-                    "uri": "HN1922",
+                    "uri": "HN1794",
                     "rdfsLabel": null
                 },
                 "type": "ColumnNode",
-                "hNodeId": "HN1922",
+                "hNodeId": "HN1794",
+                "columnName": "DimensionUnit",
+                "rdfLiteralType": null,
+                "language": "",
+                "userSemanticTypes": [
+                    {
+                        "hNodeId": "HN1794",
+                        "domain": {
+                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://www.cidoc-crm.org/cidoc-crm/P91_has_unit",
+                            "rdfsLabel": "has unit"
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "learnedSemanticTypes": null,
+                "modelIds": null
+            },
+            {
+                "id": "HN1808",
+                "label": {
+                    "uri": "HN1808",
+                    "rdfsLabel": null
+                },
+                "type": "ColumnNode",
+                "hNodeId": "HN1808",
                 "columnName": "PartURI",
                 "rdfLiteralType": null,
                 "language": "",
                 "userSemanticTypes": [
                     {
-                        "hNodeId": "HN1922",
+                        "hNodeId": "HN1808",
                         "domain": {
                             "uri": "http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing",
                             "rdfsLabel": null
@@ -146,106 +175,19 @@
                 "modelIds": null
             },
             {
-                "id": "HN1912",
+                "id": "HN1790",
                 "label": {
-                    "uri": "HN1912",
+                    "uri": "HN1790",
                     "rdfsLabel": null
                 },
                 "type": "ColumnNode",
-                "hNodeId": "HN1912",
-                "columnName": "TypeURI",
-                "rdfLiteralType": null,
-                "language": "",
-                "userSemanticTypes": [
-                    {
-                        "hNodeId": "HN1912",
-                        "domain": {
-                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
-                            "rdfsLabel": null
-                        },
-                        "type": {
-                            "uri": "http://isi.edu/integration/karma/dev#classLink",
-                            "rdfsLabel": null
-                        },
-                        "origin": "User",
-                        "confidenceScore": 1.0
-                    }
-                ],
-                "learnedSemanticTypes": null,
-                "modelIds": null
-            },
-            {
-                "id": "HN1899",
-                "label": {
-                    "uri": "HN1899",
-                    "rdfsLabel": null
-                },
-                "type": "ColumnNode",
-                "hNodeId": "HN1899",
-                "columnName": "ObjectURI",
-                "rdfLiteralType": null,
-                "language": "",
-                "userSemanticTypes": [
-                    {
-                        "hNodeId": "HN1899",
-                        "domain": {
-                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object",
-                            "rdfsLabel": null
-                        },
-                        "type": {
-                            "uri": "http://isi.edu/integration/karma/dev#classLink",
-                            "rdfsLabel": null
-                        },
-                        "origin": "User",
-                        "confidenceScore": 1.0
-                    }
-                ],
-                "learnedSemanticTypes": null,
-                "modelIds": null
-            },
-            {
-                "id": "HN1917",
-                "label": {
-                    "uri": "HN1917",
-                    "rdfsLabel": null
-                },
-                "type": "ColumnNode",
-                "hNodeId": "HN1917",
-                "columnName": "DimensionURI",
-                "rdfLiteralType": null,
-                "language": "",
-                "userSemanticTypes": [
-                    {
-                        "hNodeId": "HN1917",
-                        "domain": {
-                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension",
-                            "rdfsLabel": null
-                        },
-                        "type": {
-                            "uri": "http://isi.edu/integration/karma/dev#classLink",
-                            "rdfsLabel": null
-                        },
-                        "origin": "User",
-                        "confidenceScore": 1.0
-                    }
-                ],
-                "learnedSemanticTypes": null,
-                "modelIds": null
-            },
-            {
-                "id": "HN1904",
-                "label": {
-                    "uri": "HN1904",
-                    "rdfsLabel": null
-                },
-                "type": "ColumnNode",
-                "hNodeId": "HN1904",
+                "hNodeId": "HN1790",
                 "columnName": "DimensionType",
                 "rdfLiteralType": null,
                 "language": "",
                 "userSemanticTypes": [
                     {
-                        "hNodeId": "HN1904",
+                        "hNodeId": "HN1790",
                         "domain": {
                             "uri": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
                             "rdfsLabel": null
@@ -262,19 +204,19 @@
                 "modelIds": null
             },
             {
-                "id": "HN1919",
+                "id": "HN1805",
                 "label": {
-                    "uri": "HN1919",
+                    "uri": "HN1805",
                     "rdfsLabel": null
                 },
                 "type": "ColumnNode",
-                "hNodeId": "HN1919",
+                "hNodeId": "HN1805",
                 "columnName": "Element",
                 "rdfLiteralType": null,
                 "language": "",
                 "userSemanticTypes": [
                     {
-                        "hNodeId": "HN1919",
+                        "hNodeId": "HN1805",
                         "domain": {
                             "uri": "http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing",
                             "rdfsLabel": null
@@ -291,19 +233,77 @@
                 "modelIds": null
             },
             {
-                "id": "HN1914",
+                "id": "HN1803",
                 "label": {
-                    "uri": "HN1914",
+                    "uri": "HN1803",
                     "rdfsLabel": null
                 },
                 "type": "ColumnNode",
-                "hNodeId": "HN1914",
+                "hNodeId": "HN1803",
+                "columnName": "DimensionURI",
+                "rdfLiteralType": null,
+                "language": "",
+                "userSemanticTypes": [
+                    {
+                        "hNodeId": "HN1803",
+                        "domain": {
+                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "learnedSemanticTypes": null,
+                "modelIds": null
+            },
+            {
+                "id": "HN1785",
+                "label": {
+                    "uri": "HN1785",
+                    "rdfsLabel": null
+                },
+                "type": "ColumnNode",
+                "hNodeId": "HN1785",
+                "columnName": "ObjectURI",
+                "rdfLiteralType": null,
+                "language": "",
+                "userSemanticTypes": [
+                    {
+                        "hNodeId": "HN1785",
+                        "domain": {
+                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object",
+                            "rdfsLabel": null
+                        },
+                        "type": {
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "learnedSemanticTypes": null,
+                "modelIds": null
+            },
+            {
+                "id": "HN1800",
+                "label": {
+                    "uri": "HN1800",
+                    "rdfsLabel": null
+                },
+                "type": "ColumnNode",
+                "hNodeId": "HN1800",
                 "columnName": "value",
                 "rdfLiteralType": null,
                 "language": "",
                 "userSemanticTypes": [
                     {
-                        "hNodeId": "HN1914",
+                        "hNodeId": "HN1800",
                         "domain": {
                             "uri": "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension",
                             "rdfsLabel": null
@@ -320,26 +320,26 @@
                 "modelIds": null
             },
             {
-                "id": "HN1908",
+                "id": "HN1798",
                 "label": {
-                    "uri": "HN1908",
+                    "uri": "HN1798",
                     "rdfsLabel": null
                 },
                 "type": "ColumnNode",
-                "hNodeId": "HN1908",
-                "columnName": "DimensionUnit",
+                "hNodeId": "HN1798",
+                "columnName": "TypeURI",
                 "rdfLiteralType": null,
                 "language": "",
                 "userSemanticTypes": [
                     {
-                        "hNodeId": "HN1908",
+                        "hNodeId": "HN1798",
                         "domain": {
-                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension",
+                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E55_Type",
                             "rdfsLabel": null
                         },
                         "type": {
-                            "uri": "http://www.cidoc-crm.org/cidoc-crm/P91_has_unit",
-                            "rdfsLabel": "has unit"
+                            "uri": "http://isi.edu/integration/karma/dev#classLink",
+                            "rdfsLabel": null
                         },
                         "origin": "User",
                         "confidenceScore": 1.0
@@ -390,7 +390,19 @@
                 "modelIds": null
             },
             {
-                "id": "http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing1---http://isi.edu/integration/karma/dev#classLink---HN1922",
+                "id": "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension1---http://www.cidoc-crm.org/cidoc-crm/P91_has_unit---HN1794",
+                "weight": 0.01,
+                "type": "DataPropertyLink",
+                "label": {
+                    "uri": "http://www.cidoc-crm.org/cidoc-crm/P91_has_unit",
+                    "rdfsLabel": "has unit"
+                },
+                "status": "ForcedByUser",
+                "keyInfo": "None",
+                "modelIds": null
+            },
+            {
+                "id": "http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing1---http://isi.edu/integration/karma/dev#classLink---HN1808",
                 "weight": 0.01,
                 "type": "ClassInstanceLink",
                 "label": {
@@ -402,43 +414,7 @@
                 "modelIds": null
             },
             {
-                "id": "http://www.cidoc-crm.org/cidoc-crm/E55_Type1---http://isi.edu/integration/karma/dev#classLink---HN1912",
-                "weight": 0.01,
-                "type": "ClassInstanceLink",
-                "label": {
-                    "uri": "http://isi.edu/integration/karma/dev#classLink",
-                    "rdfsLabel": null
-                },
-                "status": "ForcedByUser",
-                "keyInfo": "UriOfInstance",
-                "modelIds": null
-            },
-            {
-                "id": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1---http://isi.edu/integration/karma/dev#classLink---HN1899",
-                "weight": 0.01,
-                "type": "ClassInstanceLink",
-                "label": {
-                    "uri": "http://isi.edu/integration/karma/dev#classLink",
-                    "rdfsLabel": null
-                },
-                "status": "ForcedByUser",
-                "keyInfo": "UriOfInstance",
-                "modelIds": null
-            },
-            {
-                "id": "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension1---http://isi.edu/integration/karma/dev#classLink---HN1917",
-                "weight": 0.01,
-                "type": "ClassInstanceLink",
-                "label": {
-                    "uri": "http://isi.edu/integration/karma/dev#classLink",
-                    "rdfsLabel": null
-                },
-                "status": "ForcedByUser",
-                "keyInfo": "UriOfInstance",
-                "modelIds": null
-            },
-            {
-                "id": "http://www.cidoc-crm.org/cidoc-crm/E55_Type1---http://www.w3.org/2004/02/skos/core#prefLabel---HN1904",
+                "id": "http://www.cidoc-crm.org/cidoc-crm/E55_Type1---http://www.w3.org/2004/02/skos/core#prefLabel---HN1790",
                 "weight": 0.01,
                 "type": "DataPropertyLink",
                 "label": {
@@ -450,7 +426,7 @@
                 "modelIds": null
             },
             {
-                "id": "http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing1---http://www.w3.org/2000/01/rdf-schema#label---HN1919",
+                "id": "http://www.cidoc-crm.org/cidoc-crm/E18_Physical_Thing1---http://www.w3.org/2000/01/rdf-schema#label---HN1805",
                 "weight": 0.01,
                 "type": "DataPropertyLink",
                 "label": {
@@ -462,7 +438,31 @@
                 "modelIds": null
             },
             {
-                "id": "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension1---http://www.w3.org/1999/02/22-rdf-syntax-ns#value---HN1914",
+                "id": "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension1---http://isi.edu/integration/karma/dev#classLink---HN1803",
+                "weight": 0.01,
+                "type": "ClassInstanceLink",
+                "label": {
+                    "uri": "http://isi.edu/integration/karma/dev#classLink",
+                    "rdfsLabel": null
+                },
+                "status": "ForcedByUser",
+                "keyInfo": "UriOfInstance",
+                "modelIds": null
+            },
+            {
+                "id": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1---http://isi.edu/integration/karma/dev#classLink---HN1785",
+                "weight": 0.01,
+                "type": "ClassInstanceLink",
+                "label": {
+                    "uri": "http://isi.edu/integration/karma/dev#classLink",
+                    "rdfsLabel": null
+                },
+                "status": "ForcedByUser",
+                "keyInfo": "UriOfInstance",
+                "modelIds": null
+            },
+            {
+                "id": "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension1---http://www.w3.org/1999/02/22-rdf-syntax-ns#value---HN1800",
                 "weight": 0.01,
                 "type": "DataPropertyLink",
                 "label": {
@@ -474,15 +474,15 @@
                 "modelIds": null
             },
             {
-                "id": "http://www.cidoc-crm.org/cidoc-crm/E54_Dimension1---http://www.cidoc-crm.org/cidoc-crm/P91_has_unit---HN1908",
+                "id": "http://www.cidoc-crm.org/cidoc-crm/E55_Type1---http://isi.edu/integration/karma/dev#classLink---HN1798",
                 "weight": 0.01,
-                "type": "DataPropertyLink",
+                "type": "ClassInstanceLink",
                 "label": {
-                    "uri": "http://www.cidoc-crm.org/cidoc-crm/P91_has_unit",
-                    "rdfsLabel": "has unit"
+                    "uri": "http://isi.edu/integration/karma/dev#classLink",
+                    "rdfsLabel": null
                 },
                 "status": "ForcedByUser",
-                "keyInfo": "None",
+                "keyInfo": "UriOfInstance",
                 "modelIds": null
             }
         ]
