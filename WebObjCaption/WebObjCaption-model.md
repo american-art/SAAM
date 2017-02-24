@@ -35,14 +35,14 @@ Literal Type: ``
 
 
 ## PyTransforms
-#### _ObjectURI_
+#### _URI_
 From column: _ObjectID_
 ``` python
 return 'object/id/'+getValue("ObjectID")
 ```
 
 #### _ClassificationURI_
-From column: _ObjectURI_
+From column: _URI_
 ``` python
 return getValue("URI")+'/classification'
 ```
