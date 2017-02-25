@@ -33,12 +33,17 @@ Literal Type: ``
 <br/>Language: ``
 <br/>isUri: `true`
 
+#### Literal Node: `http://vocab.getty.edu/aat/300404670`
+Literal Type: ``
+<br/>Language: ``
+<br/>isUri: `true`
+
 
 ## PyTransforms
 #### _URI_
 From column: _ConstituentID_
 ``` python
-return "artist/id/"+getValue("ConstituentID")
+return "constituent/id/"+getValue("ConstituentID")
 ```
 
 #### _DisplayBirthDate_
@@ -138,37 +143,43 @@ return getValue("URI")+"/name/familyname"
 #### _PrefixURI_
 From column: _NameURI_
 ``` python
-return getValue("URI")+"/name/prefix"
+if getValue("NameTitle"):
+    return getValue("URI")+"/name/prefix"
+else:
+    return ""
 ```
 
 #### _SuffixURI_
 From column: _FamilyNameURI_
 ``` python
-return getValue("URI")+"/name/suffix"
+if getValue("Suffix"):
+    return getValue("URI")+"/name/suffix"
+else:
+    return ""
 ```
 
 #### _PrefixTypeURI_
 From column: _PrefixURI_
 ``` python
-return getValue("URI")+"/name/prefix/type"
+return "thesauri/name_type/prefix"
 ```
 
 #### _GivenNameTypeURI_
 From column: _GivenNameURI_
 ``` python
-return getValue("URI")+"/name/givenname/type"
+return "thesauri/name_type/first_name"
 ```
 
 #### _FamilyNameTypeURI_
 From column: _FamilyNameURI_
 ``` python
-return getValue("URI")+"/name/familyname/type"
+return "thesauri/name_type/last_name"
 ```
 
 #### _SuffixTypeURI_
 From column: _SuffixURI_
 ``` python
-return getValue("URI")+"/name/suffix/type"
+return "thesauri/name_type/suffix"
 ```
 
 #### _SortNameTypeURI_
@@ -183,13 +194,18 @@ From column: _Code_
 return getValue("URI")+"/nationality"
 ```
 
+#### _PrimaryNameURI_
+From column: _FirstName_
+``` python
+return getValue("URI")+"/primary_name"
+```
+
 
 ## Selections
 
 ## Semantic Types
 | Column | Property | Class |
 |  ----- | -------- | ----- |
-| _AlphaSort_ | `rdf:value` | `crm:E82_Actor_Appellation6`|
 | _BeginDate_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
 | _BirthDateURI_ | `uri` | `crm:E52_Time-Span1`|
 | _BirthURI_ | `uri` | `crm:E63_Beginning_of_Existence1`|
@@ -197,26 +213,23 @@ return getValue("URI")+"/nationality"
 | _DeathURI_ | `uri` | `crm:E64_End_of_Existence1`|
 | _DisplayBirthDate_ | `rdfs:label` | `crm:E52_Time-Span1`|
 | _DisplayDeathDate_ | `rdfs:label` | `crm:E52_Time-Span2`|
-| _DisplayName_ | `rdf:value` | `crm:E82_Actor_Appellation1`|
+| _DisplayName_ | `rdf:value` | `crm:E82_Actor_Appellation7`|
 | _EndDate_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span2`|
 | _FamilyNameTypeURI_ | `uri` | `crm:E55_Type3`|
 | _FamilyNameURI_ | `uri` | `crm:E82_Actor_Appellation4`|
 | _FirstName_ | `rdf:value` | `crm:E82_Actor_Appellation3`|
 | _GivenNameTypeURI_ | `uri` | `crm:E55_Type2`|
 | _GivenNameURI_ | `uri` | `crm:E82_Actor_Appellation3`|
-| _LastName_ | `rdf:value` | `crm:E82_Actor_Appellation4`|
 | _LatestBirthDate_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
 | _LatestDeathDate_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span2`|
-| _NameTitle_ | `rdf:value` | `crm:E82_Actor_Appellation2`|
 | _NameURI_ | `uri` | `crm:E82_Actor_Appellation1`|
-| _Nationality_ | `rdfs:label` | `crm:E74_Group1`|
 | _NationalityURI_ | `uri` | `crm:E74_Group1`|
 | _PrefixTypeURI_ | `uri` | `crm:E55_Type1`|
 | _PrefixURI_ | `uri` | `crm:E82_Actor_Appellation2`|
 | _PrimaryName_ | `rdfs:label` | `crm:E39_Actor1`|
+| _PrimaryNameURI_ | `uri` | `crm:E82_Actor_Appellation7`|
 | _SortNameTypeURI_ | `uri` | `crm:E55_Type5`|
 | _SortNameURI_ | `uri` | `crm:E82_Actor_Appellation6`|
-| _Suffix_ | `rdf:value` | `crm:E82_Actor_Appellation5`|
 | _SuffixTypeURI_ | `uri` | `crm:E55_Type4`|
 | _SuffixURI_ | `uri` | `crm:E82_Actor_Appellation5`|
 | _URI_ | `uri` | `crm:E39_Actor1`|
@@ -229,6 +242,8 @@ return getValue("URI")+"/nationality"
 | `crm:E39_Actor1` | `crm:P93i_was_taken_out_of_existence_by` | `crm:E64_End_of_Existence1`|
 | `crm:E39_Actor1` | `crm:P107i_is_current_or_former_member_of` | `crm:E74_Group1`|
 | `crm:E39_Actor1` | `crm:P131_is_identified_by` | `crm:E82_Actor_Appellation1`|
+| `crm:E39_Actor1` | `crm:P131_is_identified_by` | `crm:E82_Actor_Appellation6`|
+| `crm:E39_Actor1` | `crm:P131_is_identified_by` | `crm:E82_Actor_Appellation7`|
 | `crm:E55_Type1` | `skos:broadMatch` | `xsd:http://vocab.getty.edu/aat/300404845`|
 | `crm:E55_Type2` | `skos:broadMatch` | `xsd:http://vocab.getty.edu/aat/300404651`|
 | `crm:E55_Type3` | `skos:broadMatch` | `xsd:http://vocab.getty.edu/aat/300404652`|
@@ -241,9 +256,9 @@ return getValue("URI")+"/nationality"
 | `crm:E82_Actor_Appellation1` | `crm:P106_is_composed_of` | `crm:E82_Actor_Appellation3`|
 | `crm:E82_Actor_Appellation1` | `crm:P106_is_composed_of` | `crm:E82_Actor_Appellation4`|
 | `crm:E82_Actor_Appellation1` | `crm:P106_is_composed_of` | `crm:E82_Actor_Appellation5`|
-| `crm:E82_Actor_Appellation1` | `crm:P106_is_composed_of` | `crm:E82_Actor_Appellation6`|
 | `crm:E82_Actor_Appellation2` | `crm:P2_has_type` | `crm:E55_Type1`|
 | `crm:E82_Actor_Appellation3` | `crm:P2_has_type` | `crm:E55_Type2`|
 | `crm:E82_Actor_Appellation4` | `crm:P2_has_type` | `crm:E55_Type3`|
 | `crm:E82_Actor_Appellation5` | `crm:P2_has_type` | `crm:E55_Type4`|
 | `crm:E82_Actor_Appellation6` | `crm:P2_has_type` | `crm:E55_Type5`|
+| `crm:E82_Actor_Appellation7` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300404670`|
