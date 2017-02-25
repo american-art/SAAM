@@ -38,7 +38,7 @@ return getValue("ObjectURI")+"/"+getValue("Element")+"/dimension"
 #### _PartURI_
 From column: _Element_
 ``` python
-return UM.uri_from_fields("thesauri/object_part/",getValue("Element"))
+return UM.uri_from_fields(getValue("ObjectURI")+"/",getValue("Element"))
 ```
 
 
