@@ -7,17 +7,17 @@ label="model"
 n2[style="filled",color="white",fillcolor="lightgray",label="E39_Actor1"];
 n3[style="filled",color="white",fillcolor="lightgray",label="E64_End_of_Existence1"];
 n4[style="filled",color="white",fillcolor="lightgray",label="E52_Time-Span1"];
-n5[shape="plaintext",style="filled",fillcolor="gold",label="DeathTimeURI"];
+n5[shape="plaintext",style="filled",fillcolor="gold",label="DeathLatest"];
 n6[shape="plaintext",style="filled",fillcolor="gold",label="URI"];
-n7[shape="plaintext",style="filled",fillcolor="gold",label="DeathLatest"];
-n8[shape="plaintext",style="filled",fillcolor="gold",label="DeathURI"];
+n7[shape="plaintext",style="filled",fillcolor="gold",label="DeathURI"];
+n8[shape="plaintext",style="filled",fillcolor="gold",label="DeathTimeURI"];
 n9[shape="plaintext",style="filled",fillcolor="gold",label="DateBegSearch"];
 }
 n2 -> n3[color="brown",fontcolor="black",label="P93i_was_taken_out_of_existence_by"]
 n3 -> n4[color="brown",fontcolor="black",label="P4_has_time-span"]
-n4 -> n5[color="brown",fontcolor="black",label="classLink"]
+n4 -> n5[color="brown",fontcolor="black",label="P82b_end_of_the_end"]
 n2 -> n6[color="brown",fontcolor="black",label="classLink"]
-n4 -> n7[color="brown",fontcolor="black",label="P82b_end_of_the_end"]
-n3 -> n8[color="brown",fontcolor="black",label="classLink"]
+n3 -> n7[color="brown",fontcolor="black",label="classLink"]
+n4 -> n8[color="brown",fontcolor="black",label="classLink"]
 n4 -> n9[color="brown",fontcolor="black",label="P82a_begin_of_the_begin"]
 }
