@@ -14,13 +14,22 @@ return "object/id/"+getValue("ObjectID")
 #### _ArtistURI_
 From column: _ConstituentID_
 ``` python
-return "artist/id/"+getValue("ConstituentID")
+if getValue("Role") in ["Artist","Author","Designer"]:
+    return "constituent/id/"+getValue("ConstituentID")
+else:
+    return ""
 ```
 
 #### _CreatorURI_
 From column: _URI_
 ``` python
 return getValue("URI")+"/creator"
+```
+
+#### _ProductionURI_
+From column: _URI_
+``` python
+return getValue("URI")+"/production"
 ```
 
 
@@ -30,7 +39,7 @@ return getValue("URI")+"/creator"
 | Column | Property | Class |
 |  ----- | -------- | ----- |
 | _ArtistURI_ | `uri` | `crm:E39_Actor1`|
-| _CreatorURI_ | `uri` | `crm:E12_Production1`|
+| _ProductionURI_ | `uri` | `crm:E12_Production1`|
 | _URI_ | `uri` | `crm:E22_Man-Made_Object1`|
 
 
