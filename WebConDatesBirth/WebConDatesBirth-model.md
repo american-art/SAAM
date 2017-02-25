@@ -8,7 +8,7 @@
 #### _URI_
 From column: _ConstituentID_
 ``` python
-return 'artist/id/'+getValue("ConstituentID")
+return 'constituent/id/'+getValue("ConstituentID")
 ```
 
 #### _BirthURI_
