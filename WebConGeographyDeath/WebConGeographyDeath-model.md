@@ -23,7 +23,7 @@ else:
 #### _URI_
 From column: _ConstituentID_
 ``` python
-return 'artist/id/'+getValue("ConstituentID")
+return 'constituent/id/'+getValue("ConstituentID")
 ```
 
 #### _DeathURI_
@@ -35,7 +35,7 @@ return getValue("URI")+'/death'
 #### _DeathLocationURI_
 From column: _DeathURI_
 ``` python
-return getValue("URI")+'/death/location'
+return UM.uri_from_fields("thesauri/place/",getValue("City"))
 ```
 
 
