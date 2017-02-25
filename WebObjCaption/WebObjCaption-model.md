@@ -56,13 +56,13 @@ return getValue("URI")+'/classification/type'
 #### _CreationURI_
 From column: _NotInUse_
 ``` python
-return getValue("URI")+'/creation'
+return getValue("URI")+'/production'
 ```
 
 #### _CreationTimeURI_
 From column: _CreationURI_
 ``` python
-return getValue("URI")+'/creation/time'
+return getValue("CreationURI")+'/time'
 ```
 
 #### _PrimaryTitle_
