@@ -8,7 +8,7 @@
 #### _ConstituentURI_
 From column: _ConstituentID_
 ``` python
-return "constituent/"+getValue("ConstituentID")
+return "constituent/id/"+getValue("ConstituentID")
 ```
 
 #### _Name_
