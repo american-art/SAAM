@@ -8,7 +8,7 @@
 #### _URI_
 From column: _ConstituentID_
 ``` python
-return 'artist/id/'+getValue("ConstituentID")
+return 'constituent/id/'+getValue("ConstituentID")
 ```
 
 #### _ImageURI_
@@ -24,7 +24,6 @@ return getValue("URI")+'/image'
 | Column | Property | Class |
 |  ----- | -------- | ----- |
 | _ImageURI_ | `uri` | `crm:E38_Image1`|
-| _PublicCaption_ | `rdfs:label` | `crm:E38_Image1`|
 | _URI_ | `uri` | `crm:E39_Actor1`|
 
 
