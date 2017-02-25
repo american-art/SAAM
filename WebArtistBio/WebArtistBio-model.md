@@ -18,7 +18,7 @@ Literal Type: ``
 #### _URI_
 From column: _ConstituentID_
 ``` python
-return 'artist/id/'+getValue("ConstituentID")
+return 'constituent/id/'+getValue("ConstituentID")
 ```
 
 #### _BioURI_
@@ -48,6 +48,6 @@ return getValue("BioDsp")
 ## Links
 | From | Property | To |
 |  --- | -------- | ---|
-| `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300404670`|
 | `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300080102`|
+| `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300404670`|
 | `crm:E39_Actor1` | `crm:P129i_is_subject_of` | `crm:E33_Linguistic_Object1`|
