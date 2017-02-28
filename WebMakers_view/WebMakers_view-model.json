@@ -4,33 +4,33 @@
     "description": null,
     "sourceColumns": [
         {
-            "id": "HN1733",
-            "hNodeId": "HN1733",
+            "id": "HN210079",
+            "hNodeId": "HN210079",
             "columnName": "URI"
         },
         {
-            "id": "HN2046",
-            "hNodeId": "HN2046",
-            "columnName": "ProductionURI"
+            "id": "HN210084",
+            "hNodeId": "HN210084",
+            "columnName": "ArtistURI"
         },
         {
-            "id": "HN1837",
-            "hNodeId": "HN1837",
-            "columnName": "ArtistURI"
+            "id": "HN210093",
+            "hNodeId": "HN210093",
+            "columnName": "ProductionURI"
         }
     ],
     "mappingToSourceColumns": [
         {
-            "id": "HN1733",
-            "sourceColumnId": "HN1733"
+            "id": "HN210084",
+            "sourceColumnId": "HN210084"
         },
         {
-            "id": "HN2046",
-            "sourceColumnId": "HN2046"
+            "id": "HN210079",
+            "sourceColumnId": "HN210079"
         },
         {
-            "id": "HN1837",
-            "sourceColumnId": "HN1837"
+            "id": "HN210093",
+            "sourceColumnId": "HN210093"
         }
     ],
     "graph": {
@@ -63,19 +63,19 @@
                 "modelIds": null
             },
             {
-                "id": "HN1733",
+                "id": "HN210079",
                 "label": {
-                    "uri": "HN1733",
+                    "uri": "HN210079",
                     "rdfsLabel": null
                 },
                 "type": "ColumnNode",
-                "hNodeId": "HN1733",
+                "hNodeId": "HN210079",
                 "columnName": "URI",
                 "rdfLiteralType": null,
                 "language": "",
                 "userSemanticTypes": [
                     {
-                        "hNodeId": "HN1733",
+                        "hNodeId": "HN210079",
                         "domain": {
                             "uri": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object",
                             "rdfsLabel": null
@@ -92,21 +92,21 @@
                 "modelIds": null
             },
             {
-                "id": "HN2046",
+                "id": "HN210084",
                 "label": {
-                    "uri": "HN2046",
+                    "uri": "HN210084",
                     "rdfsLabel": null
                 },
                 "type": "ColumnNode",
-                "hNodeId": "HN2046",
-                "columnName": "ProductionURI",
+                "hNodeId": "HN210084",
+                "columnName": "ArtistURI",
                 "rdfLiteralType": null,
                 "language": "",
                 "userSemanticTypes": [
                     {
-                        "hNodeId": "HN2046",
+                        "hNodeId": "HN210084",
                         "domain": {
-                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E12_Production",
+                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E39_Actor",
                             "rdfsLabel": null
                         },
                         "type": {
@@ -121,21 +121,21 @@
                 "modelIds": null
             },
             {
-                "id": "HN1837",
+                "id": "HN210093",
                 "label": {
-                    "uri": "HN1837",
+                    "uri": "HN210093",
                     "rdfsLabel": null
                 },
                 "type": "ColumnNode",
-                "hNodeId": "HN1837",
-                "columnName": "ArtistURI",
+                "hNodeId": "HN210093",
+                "columnName": "ProductionURI",
                 "rdfLiteralType": null,
                 "language": "",
                 "userSemanticTypes": [
                     {
-                        "hNodeId": "HN1837",
+                        "hNodeId": "HN210093",
                         "domain": {
-                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E39_Actor",
+                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E12_Production",
                             "rdfsLabel": null
                         },
                         "type": {
@@ -178,7 +178,7 @@
                 "modelIds": null
             },
             {
-                "id": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1---http://isi.edu/integration/karma/dev#classLink---HN1733",
+                "id": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1---http://isi.edu/integration/karma/dev#classLink---HN210079",
                 "weight": 0.01,
                 "type": "ClassInstanceLink",
                 "label": {
@@ -190,7 +190,7 @@
                 "modelIds": null
             },
             {
-                "id": "http://www.cidoc-crm.org/cidoc-crm/E12_Production1---http://isi.edu/integration/karma/dev#classLink---HN2046",
+                "id": "http://www.cidoc-crm.org/cidoc-crm/E39_Actor1---http://isi.edu/integration/karma/dev#classLink---HN210084",
                 "weight": 0.01,
                 "type": "ClassInstanceLink",
                 "label": {
@@ -202,7 +202,7 @@
                 "modelIds": null
             },
             {
-                "id": "http://www.cidoc-crm.org/cidoc-crm/E39_Actor1---http://isi.edu/integration/karma/dev#classLink---HN1837",
+                "id": "http://www.cidoc-crm.org/cidoc-crm/E12_Production1---http://isi.edu/integration/karma/dev#classLink---HN210093",
                 "weight": 0.01,
                 "type": "ClassInstanceLink",
                 "label": {
