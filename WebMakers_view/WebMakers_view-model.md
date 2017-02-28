@@ -14,7 +14,7 @@ return "object/id/"+getValue("ObjectID")
 #### _ArtistURI_
 From column: _ConstituentID_
 ``` python
-if getValue("Role") in ["Artist","Author","Designer"]:
+if getValue("Role") in ["Artist","Author","Designer"] and getValue("DisplayName")!="Unidentified":
     return "constituent/id/"+getValue("ConstituentID")
 else:
     return ""
