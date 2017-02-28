@@ -206,6 +206,7 @@ return getValue("URI")+"/primary_name"
 ## Semantic Types
 | Column | Property | Class |
 |  ----- | -------- | ----- |
+| _AlphaSort_ | `rdf:value` | `crm:E82_Actor_Appellation6`|
 | _BeginDate_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
 | _BirthDateURI_ | `uri` | `crm:E52_Time-Span1`|
 | _BirthURI_ | `uri` | `crm:E63_Beginning_of_Existence1`|
@@ -220,9 +221,12 @@ return getValue("URI")+"/primary_name"
 | _FirstName_ | `rdf:value` | `crm:E82_Actor_Appellation3`|
 | _GivenNameTypeURI_ | `uri` | `crm:E55_Type2`|
 | _GivenNameURI_ | `uri` | `crm:E82_Actor_Appellation3`|
+| _LastName_ | `rdf:value` | `crm:E82_Actor_Appellation4`|
 | _LatestBirthDate_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
 | _LatestDeathDate_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span2`|
+| _NameTitle_ | `rdf:value` | `crm:E82_Actor_Appellation2`|
 | _NameURI_ | `uri` | `crm:E82_Actor_Appellation1`|
+| _Nationality_ | `rdfs:label` | `crm:E74_Group1`|
 | _NationalityURI_ | `uri` | `crm:E74_Group1`|
 | _PrefixTypeURI_ | `uri` | `crm:E55_Type1`|
 | _PrefixURI_ | `uri` | `crm:E82_Actor_Appellation2`|
@@ -230,6 +234,7 @@ return getValue("URI")+"/primary_name"
 | _PrimaryNameURI_ | `uri` | `crm:E82_Actor_Appellation7`|
 | _SortNameTypeURI_ | `uri` | `crm:E55_Type5`|
 | _SortNameURI_ | `uri` | `crm:E82_Actor_Appellation6`|
+| _Suffix_ | `rdf:value` | `crm:E82_Actor_Appellation5`|
 | _SuffixTypeURI_ | `uri` | `crm:E55_Type4`|
 | _SuffixURI_ | `uri` | `crm:E82_Actor_Appellation5`|
 | _URI_ | `uri` | `crm:E39_Actor1`|
