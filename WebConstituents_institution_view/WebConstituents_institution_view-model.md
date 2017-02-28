@@ -104,6 +104,7 @@ return getValue("DeathURI")+"/time"
 | _LatestBeginDate_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
 | _LatestEndDate_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span2`|
 | _NameLabel_ | `rdfs:label` | `crm:E39_Actor1`|
+| _Nationality_ | `rdfs:label` | `crm:E74_Group1`|
 | _NationalityURI_ | `uri` | `crm:E74_Group1`|
 | _PrimaryNameURI_ | `uri` | `crm:E82_Actor_Appellation1`|
 | _SortNameURI_ | `uri` | `crm:E82_Actor_Appellation2`|
