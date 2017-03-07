@@ -28,11 +28,6 @@ Literal Type: ``
 <br/>Language: ``
 <br/>isUri: `true`
 
-#### Literal Node: `http://vocab.getty.edu/aat/300055547`
-Literal Type: ``
-<br/>Language: ``
-<br/>isUri: `true`
-
 
 ## PyTransforms
 #### _URI_
@@ -137,6 +132,18 @@ else:
     return ""
 ```
 
+#### _OwnerURI_
+From column: _objectnumber_
+``` python
+return "https://americanart.si.edu"
+```
+
+#### _OwnerLabel_
+From column: _OwnerURI_
+``` python
+return "Smithsonian American Art Museum"
+```
+
 
 ## Selections
 
@@ -155,6 +162,8 @@ else:
 | _Dimensions_ | `rdf:value` | `crm:E33_Linguistic_Object2`|
 | _Medium_ | `rdf:value` | `crm:E33_Linguistic_Object1`|
 | _MediumURI_ | `uri` | `crm:E33_Linguistic_Object1`|
+| _OwnerLabel_ | `rdfs:label` | `crm:E40_Legal_Body1`|
+| _OwnerURI_ | `uri` | `crm:E40_Legal_Body1`|
 | _PrimaryTitle_ | `rdfs:label` | `crm:E22_Man-Made_Object1`|
 | _Title_ | `rdf:value` | `crm:E35_Title1`|
 | _TitleURI_ | `uri` | `crm:E35_Title1`|
@@ -172,24 +181,19 @@ else:
 |  --- | -------- | ---|
 | `crm:E12_Production1` | `crm:P4_has_time-span` | `crm:E52_Time-Span1`|
 | `crm:E17_Type_Assignment1` | `crm:P42_assigned` | `crm:E55_Type1`|
-| `crm:E17_Type_Assignment1` | `crm:P21_had_general_purpose` | `xsd:http://vocab.getty.edu/aat/300179869`|
+| `crm:E17_Type_Assignment1` | `crm:P21_had_general_purpose` | `http://vocab.getty.edu/aat/300179869`|
 | `crm:E22_Man-Made_Object1` | `crm:P108i_was_produced_by` | `crm:E12_Production1`|
 | `crm:E22_Man-Made_Object1` | `crm:P41i_was_classified_by` | `crm:E17_Type_Assignment1`|
+| `crm:E22_Man-Made_Object1` | `crm:P67i_is_referred_to_by` | `crm:E33_Linguistic_Object1`|
 | `crm:E22_Man-Made_Object1` | `crm:P67i_is_referred_to_by` | `crm:E33_Linguistic_Object2`|
 | `crm:E22_Man-Made_Object1` | `crm:P67i_is_referred_to_by` | `crm:E33_Linguistic_Object3`|
 | `crm:E22_Man-Made_Object1` | `crm:P67i_is_referred_to_by` | `crm:E33_Linguistic_Object4`|
 | `crm:E22_Man-Made_Object1` | `crm:P102_has_title` | `crm:E35_Title1`|
-| `crm:E22_Man-Made_Object1` | `crm:P62_depicts` | `crm:E39_Actor2`|
+| `crm:E22_Man-Made_Object1` | `crm:P52_has_current_owner` | `crm:E40_Legal_Body1`|
 | `crm:E22_Man-Made_Object1` | `foaf:homepage` | `foaf:Document1`|
 | `crm:E22_Man-Made_Object1` | `foaf:homepage` | `foaf:Document2`|
 | `crm:E22_Man-Made_Object1` | `crm:P2_has_type` | `crm:E55_Type1`|
-| `crm:E22_Man-Made_Object1` | `crm:P67i_is_referred_to_by` | `crm:E33_Linguistic_Object1`|
-| `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300264237`|
-| `crm:E33_Linguistic_Object2` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300266036`|
-| `crm:E33_Linguistic_Object3` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300026687`|
-| `crm:E33_Linguistic_Object4` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300055547`|
-| `crm:E35_Title1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300404670`|
-| `crm:E39_Actor2` | `crm:P129i_is_subject_of` | `crm:E33_Linguistic_Object1`|
-| `crm:E39_Actor2` | `crm:P2_has_type` | `crm:E55_Type1`|
-| `crm:E39_Actor2` | `crm:P92i_was_brought_into_existence_by` | `crm:E63_Beginning_of_Existence1`|
-| `crm:E63_Beginning_of_Existence1` | `crm:P4_has_time-span` | `crm:E52_Time-Span1`|
+| `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300264237`|
+| `crm:E33_Linguistic_Object2` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300266036`|
+| `crm:E33_Linguistic_Object3` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300026687`|
+| `crm:E35_Title1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300404670`|
