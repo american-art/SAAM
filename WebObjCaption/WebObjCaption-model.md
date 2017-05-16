@@ -62,7 +62,10 @@ return getValue("URI")+'/production'
 #### _CreationTimeURI_
 From column: _CreationURI_
 ``` python
-return getValue("CreationURI")+'/time'
+if getValue("DateBeginClean"):
+    return getValue("CreationURI")+'/time'
+else:
+    return ""
 ```
 
 #### _PrimaryTitle_
@@ -170,6 +173,24 @@ else:
     return ""
 ```
 
+#### _DateBeginClean_
+From column: _datebegin_
+``` python
+if getValue("datebegin"):
+    return getValue("datebegin") + "-01-01"
+else:
+    return ""
+```
+
+#### _DateEndClean_
+From column: _dateend_
+``` python
+if getValue("dateend"):
+    return getValue("dateend") + "-12-31"
+else:
+    return ""
+```
+
 
 ## Selections
 
@@ -183,6 +204,8 @@ else:
 | _CreationURI_ | `uri` | `crm:E12_Production1`|
 | _Creditline_ | `rdf:value` | `crm:E33_Linguistic_Object3`|
 | _CreditlineURI_ | `uri` | `crm:E33_Linguistic_Object3`|
+| _DateBeginClean_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
+| _DateEndClean_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
 | _DimensionURI_ | `uri` | `crm:E33_Linguistic_Object2`|
 | _Dimensions_ | `rdf:value` | `crm:E33_Linguistic_Object2`|
 | _Medium_ | `rdf:value` | `crm:E33_Linguistic_Object1`|
@@ -197,9 +220,7 @@ else:
 | _Title_ | `rdf:value` | `crm:E35_Title1`|
 | _TitleURI_ | `uri` | `crm:E35_Title1`|
 | _URI_ | `uri` | `crm:E22_Man-Made_Object1`|
-| _datebegin_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
 | _dated_clean_ | `rdfs:label` | `crm:E52_Time-Span1`|
-| _dateend_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
 | _objectDetailsWebPage_ | `rdfs:label` | `foaf:Document1`|
 | _objectnumber_ | `rdf:value` | `crm:E42_Identifier1`|
 | _website_ | `uri` | `foaf:Document1`|
