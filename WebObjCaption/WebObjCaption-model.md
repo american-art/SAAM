@@ -176,7 +176,6 @@ else:
 ## Semantic Types
 | Column | Property | Class |
 |  ----- | -------- | ----- |
-| _AlternateWebsiteURI_ | `uri` | `foaf:Document2`|
 | _Classification_ | `rdfs:label` | `crm:E55_Type1`|
 | _ClassificationTypeURI_ | `uri` | `crm:E55_Type1`|
 | _ClassificationURI_ | `uri` | `crm:E17_Type_Assignment1`|
@@ -201,7 +200,6 @@ else:
 | _datebegin_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
 | _dated_clean_ | `rdfs:label` | `crm:E52_Time-Span1`|
 | _dateend_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
-| _linkedDataLink_ | `rdfs:label` | `foaf:Document2`|
 | _objectDetailsWebPage_ | `rdfs:label` | `foaf:Document1`|
 | _objectnumber_ | `rdf:value` | `crm:E42_Identifier1`|
 | _website_ | `uri` | `foaf:Document1`|
@@ -223,7 +221,6 @@ else:
 | `crm:E22_Man-Made_Object1` | `crm:P1_is_identified_by` | `crm:E42_Identifier1`|
 | `crm:E22_Man-Made_Object1` | `crm:P1_is_identified_by` | `crm:E42_Identifier2`|
 | `crm:E22_Man-Made_Object1` | `foaf:homepage` | `foaf:Document1`|
-| `crm:E22_Man-Made_Object1` | `foaf:homepage` | `foaf:Document2`|
 | `crm:E22_Man-Made_Object1` | `crm:P2_has_type` | `crm:E55_Type1`|
 | `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300264237`|
 | `crm:E33_Linguistic_Object2` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300266036`|
