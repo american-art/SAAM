@@ -28,12 +28,17 @@ Literal Type: ``
 <br/>Language: ``
 <br/>isUri: `true`
 
+#### Literal Node: `http://vocab.getty.edu/aat/300404621`
+Literal Type: ``
+<br/>Language: ``
+<br/>isUri: `true`
+
 
 ## PyTransforms
 #### _URI_
 From column: _ObjectID_
 ``` python
-return 'object/id/'+getValue("ObjectID")
+return 'object/id/'+SM.fingerprint_string(getValue("objectnumber"))
 ```
 
 #### _ClassificationURI_
@@ -144,6 +149,27 @@ From column: _OwnerURI_
 return "Smithsonian American Art Museum"
 ```
 
+#### _Pref_Id_Label_
+From column: _objectnumber_
+``` python
+return getValue("objectnumber")
+```
+
+#### _PrefIdURI_
+From column: _objectnumber_
+``` python
+return getValue("URI")+"/pref_id"
+```
+
+#### _ObjNoURI_
+From column: _ObjectID_
+``` python
+if getValue("ObjectID"):
+    return getValue("URI")+"/obj_no"
+else:
+    return ""
+```
+
 
 ## Selections
 
@@ -162,8 +188,12 @@ return "Smithsonian American Art Museum"
 | _Dimensions_ | `rdf:value` | `crm:E33_Linguistic_Object2`|
 | _Medium_ | `rdf:value` | `crm:E33_Linguistic_Object1`|
 | _MediumURI_ | `uri` | `crm:E33_Linguistic_Object1`|
+| _ObjNoURI_ | `uri` | `crm:E42_Identifier2`|
+| _ObjectID_ | `rdf:value` | `crm:E42_Identifier2`|
 | _OwnerLabel_ | `rdfs:label` | `crm:E40_Legal_Body1`|
 | _OwnerURI_ | `uri` | `crm:E40_Legal_Body1`|
+| _PrefIdURI_ | `uri` | `crm:E42_Identifier1`|
+| _Pref_Id_Label_ | `rdfs:label` | `crm:E42_Identifier1`|
 | _PrimaryTitle_ | `rdfs:label` | `crm:E22_Man-Made_Object1`|
 | _Title_ | `rdf:value` | `crm:E35_Title1`|
 | _TitleURI_ | `uri` | `crm:E35_Title1`|
@@ -173,6 +203,7 @@ return "Smithsonian American Art Museum"
 | _dateend_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
 | _linkedDataLink_ | `rdfs:label` | `foaf:Document2`|
 | _objectDetailsWebPage_ | `rdfs:label` | `foaf:Document1`|
+| _objectnumber_ | `rdf:value` | `crm:E42_Identifier1`|
 | _website_ | `uri` | `foaf:Document1`|
 
 
@@ -187,9 +218,10 @@ return "Smithsonian American Art Museum"
 | `crm:E22_Man-Made_Object1` | `crm:P67i_is_referred_to_by` | `crm:E33_Linguistic_Object1`|
 | `crm:E22_Man-Made_Object1` | `crm:P67i_is_referred_to_by` | `crm:E33_Linguistic_Object2`|
 | `crm:E22_Man-Made_Object1` | `crm:P67i_is_referred_to_by` | `crm:E33_Linguistic_Object3`|
-| `crm:E22_Man-Made_Object1` | `crm:P67i_is_referred_to_by` | `crm:E33_Linguistic_Object4`|
 | `crm:E22_Man-Made_Object1` | `crm:P102_has_title` | `crm:E35_Title1`|
 | `crm:E22_Man-Made_Object1` | `crm:P52_has_current_owner` | `crm:E40_Legal_Body1`|
+| `crm:E22_Man-Made_Object1` | `crm:P1_is_identified_by` | `crm:E42_Identifier1`|
+| `crm:E22_Man-Made_Object1` | `crm:P1_is_identified_by` | `crm:E42_Identifier2`|
 | `crm:E22_Man-Made_Object1` | `foaf:homepage` | `foaf:Document1`|
 | `crm:E22_Man-Made_Object1` | `foaf:homepage` | `foaf:Document2`|
 | `crm:E22_Man-Made_Object1` | `crm:P2_has_type` | `crm:E55_Type1`|
@@ -197,3 +229,5 @@ return "Smithsonian American Art Museum"
 | `crm:E33_Linguistic_Object2` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300266036`|
 | `crm:E33_Linguistic_Object3` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300026687`|
 | `crm:E35_Title1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300404670`|
+| `crm:E42_Identifier1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300404670`|
+| `crm:E42_Identifier2` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300404621`|
