@@ -14,13 +14,18 @@ return "constituent/id/"+getValue("ConstituentID")
 #### _Name_
 From column: _LastName_
 ``` python
-return getValue("FirstName") + " " + getValue("LastName")
+name = getValue("FirstName") + " " + getValue("LastName")
+if getValue("NameTitle"):
+    name = getValue("NameTitle") + " " + name
+if getValue("Suffix"):
+    name = name + " " + getValue("Suffix")
+return name
 ```
 
 #### _AltNameURI_
 From column: _LastName_
 ``` python
-return getValue("ConstituentURI")+"/alt_name"
+return UM.uri_from_fields(getValue("ConstituentURI")+"/",getValue("NameType"))
 ```
 
 #### _NameTypeURI_
