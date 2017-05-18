@@ -5,59 +5,69 @@ label="WebConstituents_institution_view.csv"
 subgraph cluster {
 label="model"
 n2[style="filled",color="white",fillcolor="lightgray",label="E39_Actor1"];
-n3[style="filled",color="white",fillcolor="lightgray",label="E63_Beginning_of_Existence1"];
-n4[style="filled",color="white",fillcolor="lightgray",label="E64_End_of_Existence1"];
-n5[style="filled",color="white",fillcolor="lightgray",label="E74_Group1"];
-n6[style="filled",color="white",fillcolor="lightgray",label="E82_Actor_Appellation1"];
-n7[style="filled",color="white",fillcolor="lightgray",label="E82_Actor_Appellation2"];
-n8[style="filled",color="white",fillcolor="lightgray",label="E52_Time-Span1"];
-n9[style="filled",color="white",fillcolor="lightgray",label="E52_Time-Span2"];
-n10[shape="plaintext",style="filled",fillcolor="gold",label="Nationality"];
-n11[shape="plaintext",style="filled",fillcolor="gold",label="DeathURI"];
-n12[shape="plaintext",style="filled",fillcolor="gold",label="BeginDate"];
-n13[shape="plaintext",style="filled",fillcolor="gold",label="LatestBeginDate"];
-n14[shape="plaintext",style="filled",fillcolor="gold",label="DisplayName"];
-n15[shape="plaintext",style="filled",fillcolor="gold",label="AlphaSort"];
-n16[shape="plaintext",style="filled",fillcolor="gold",label="NameLabel"];
-n17[shape="plaintext",style="filled",fillcolor="gold",label="SortNameURI"];
-n18[shape="plaintext",style="filled",fillcolor="gold",label="DeathTimeURI"];
-n19[shape="plaintext",style="filled",fillcolor="gold",label="NationalityURI"];
-n20[shape="plaintext",style="filled",fillcolor="gold",label="LatestEndDate"];
-n21[shape="plaintext",style="filled",fillcolor="gold",label="ConstituentURI"];
+n3[style="filled",color="white",fillcolor="lightgray",label="E42_Identifier1"];
+n4[style="filled",color="white",fillcolor="lightgray",label="E63_Beginning_of_Existence1"];
+n5[style="filled",color="white",fillcolor="lightgray",label="E64_End_of_Existence1"];
+n6[style="filled",color="white",fillcolor="lightgray",label="E74_Group1"];
+n7[style="filled",color="white",fillcolor="lightgray",label="E82_Actor_Appellation1"];
+n8[style="filled",color="white",fillcolor="lightgray",label="E82_Actor_Appellation2"];
+n9[style="filled",color="white",fillcolor="lightgray",label="E52_Time-Span1"];
+n10[style="filled",color="white",fillcolor="lightgray",label="E52_Time-Span2"];
+n11[shape="plaintext",style="filled",fillcolor="gold",label="BirthURI"];
+n12[shape="plaintext",style="filled",fillcolor="gold",label="PrefIdURI"];
+n13[shape="plaintext",style="filled",fillcolor="gold",label="Nationality"];
+n14[shape="plaintext",style="filled",fillcolor="gold",label="LatestEndDate"];
+n15[shape="plaintext",style="filled",fillcolor="gold",label="NationalityURI"];
+n16[shape="plaintext",style="filled",fillcolor="gold",label="PrimaryNameURI"];
+n17[shape="plaintext",style="filled",fillcolor="gold",label="ConstituentURI"];
+n18[shape="plaintext",style="filled",fillcolor="gold",label="DisplayName"];
+n19[shape="plaintext",style="filled",fillcolor="gold",label="BeginDate"];
+n20[shape="plaintext",style="filled",fillcolor="gold",label="EarliestEndDate"];
+n21[shape="plaintext",style="filled",fillcolor="gold",label="NameLabel"];
 n22[shape="plaintext",style="filled",fillcolor="gold",label="BirthTimeURI"];
-n23[shape="plaintext",style="filled",fillcolor="gold",label="EarliestEndDate"];
-n24[shape="plaintext",style="filled",fillcolor="gold",label="PrimaryNameURI"];
-n25[shape="plaintext",style="filled",fillcolor="gold",label="EarliestBeginDate"];
-n26[shape="plaintext",style="filled",fillcolor="gold",label="BirthURI"];
-n27[shape="plaintext",style="filled",fillcolor="#CC7799",label="http://vocab.getty.edu/aat/300404670"];
-n28[shape="plaintext",style="filled",fillcolor="#CC7799",label="http://vocab.getty.edu/aat/300404672"];
-n29[shape="plaintext",style="filled",fillcolor="#CC7799",label="http://vocab.getty.edu/aat/300379842"];
+n23[shape="plaintext",style="filled",fillcolor="gold",label="ConstituentID"];
+n24[shape="plaintext",style="filled",fillcolor="gold",label="EarliestBeginDate"];
+n25[shape="plaintext",style="filled",fillcolor="gold",label="AlphaSort"];
+n26[shape="plaintext",style="filled",fillcolor="gold",label="LatestBeginDate"];
+n27[shape="plaintext",style="filled",fillcolor="gold",label="DeathURI"];
+n28[shape="plaintext",style="filled",fillcolor="gold",label="DeathTimeURI"];
+n29[shape="plaintext",style="filled",fillcolor="gold",label="IdLabel"];
+n30[shape="plaintext",style="filled",fillcolor="gold",label="SortNameURI"];
+n31[shape="plaintext",style="filled",fillcolor="#CC7799",label="http://vocab.getty.edu/aat/300404670"];
+n32[shape="plaintext",style="filled",fillcolor="#CC7799",label="http://vocab.getty.edu/aat/300404672"];
+n33[shape="plaintext",style="filled",fillcolor="#CC7799",label="http://vocab.getty.edu/aat/300404670"];
+n34[shape="plaintext",style="filled",fillcolor="#CC7799",label="http://vocab.getty.edu/aat/300379842"];
 }
-n2 -> n3[color="brown",fontcolor="black",label="P92i_was_brought_into_existence_by"]
-n2 -> n4[color="brown",fontcolor="black",label="P93i_was_taken_out_of_existence_by"]
-n2 -> n5[color="brown",fontcolor="black",label="P107i_is_current_or_former_member_of"]
-n2 -> n6[color="brown",fontcolor="black",label="P131_is_identified_by"]
+n2 -> n3[color="brown",fontcolor="black",label="P1_is_identified_by"]
+n2 -> n4[color="brown",fontcolor="black",label="P92i_was_brought_into_existence_by"]
+n2 -> n5[color="brown",fontcolor="black",label="P93i_was_taken_out_of_existence_by"]
+n2 -> n6[color="brown",fontcolor="black",label="P107i_is_current_or_former_member_of"]
 n2 -> n7[color="brown",fontcolor="black",label="P131_is_identified_by"]
-n3 -> n8[color="brown",fontcolor="black",label="P4_has_time-span"]
+n2 -> n8[color="brown",fontcolor="black",label="P131_is_identified_by"]
 n4 -> n9[color="brown",fontcolor="black",label="P4_has_time-span"]
-n5 -> n10[color="brown",fontcolor="black",label="label"]
+n5 -> n10[color="brown",fontcolor="black",label="P4_has_time-span"]
 n4 -> n11[color="brown",fontcolor="black",label="classLink"]
-n8 -> n12[color="brown",fontcolor="black",label="label"]
-n8 -> n13[color="brown",fontcolor="black",label="P82b_end_of_the_end"]
-n6 -> n14[color="brown",fontcolor="black",label="value"]
-n7 -> n15[color="brown",fontcolor="black",label="value"]
-n2 -> n16[color="brown",fontcolor="black",label="label"]
-n7 -> n17[color="brown",fontcolor="black",label="classLink"]
-n9 -> n18[color="brown",fontcolor="black",label="classLink"]
-n5 -> n19[color="brown",fontcolor="black",label="classLink"]
-n9 -> n20[color="brown",fontcolor="black",label="P82b_end_of_the_end"]
-n2 -> n21[color="brown",fontcolor="black",label="classLink"]
-n8 -> n22[color="brown",fontcolor="black",label="classLink"]
-n9 -> n23[color="brown",fontcolor="black",label="P82a_begin_of_the_begin"]
-n6 -> n24[color="brown",fontcolor="black",label="classLink"]
-n8 -> n25[color="brown",fontcolor="black",label="P82a_begin_of_the_begin"]
-n3 -> n26[color="brown",fontcolor="black",label="classLink"]
-n6 -> n27[color="brown",fontcolor="black",label="P2_has_type"]
-n7 -> n28[color="brown",fontcolor="black",label="P2_has_type"]
-n5 -> n29[color="brown",fontcolor="black",label="P2_has_type"]
+n3 -> n12[color="brown",fontcolor="black",label="classLink"]
+n6 -> n13[color="brown",fontcolor="black",label="label"]
+n10 -> n14[color="brown",fontcolor="black",label="P82b_end_of_the_end"]
+n6 -> n15[color="brown",fontcolor="black",label="classLink"]
+n7 -> n16[color="brown",fontcolor="black",label="classLink"]
+n2 -> n17[color="brown",fontcolor="black",label="classLink"]
+n7 -> n18[color="brown",fontcolor="black",label="value"]
+n9 -> n19[color="brown",fontcolor="black",label="label"]
+n10 -> n20[color="brown",fontcolor="black",label="P82a_begin_of_the_begin"]
+n2 -> n21[color="brown",fontcolor="black",label="label"]
+n9 -> n22[color="brown",fontcolor="black",label="classLink"]
+n3 -> n23[color="brown",fontcolor="black",label="value"]
+n9 -> n24[color="brown",fontcolor="black",label="P82a_begin_of_the_begin"]
+n8 -> n25[color="brown",fontcolor="black",label="value"]
+n9 -> n26[color="brown",fontcolor="black",label="P82b_end_of_the_end"]
+n5 -> n27[color="brown",fontcolor="black",label="classLink"]
+n10 -> n28[color="brown",fontcolor="black",label="classLink"]
+n3 -> n29[color="brown",fontcolor="black",label="label"]
+n8 -> n30[color="brown",fontcolor="black",label="classLink"]
+n7 -> n31[color="brown",fontcolor="black",label="P2_has_type"]
+n8 -> n32[color="brown",fontcolor="black",label="P2_has_type"]
+n3 -> n33[color="brown",fontcolor="black",label="P2_has_type"]
+n6 -> n34[color="brown",fontcolor="black",label="P2_has_type"]
 }
