@@ -10,14 +10,21 @@ From column: _City_
 ``` python
 c = str(getValue("City"))
 s = str(getValue("State"))
-if c == "" and s == "":
-    return ""
-elif c == "":
-    return s
-elif s == "":
-    return c
-else:
-    return c+', '+s
+co = str(getValue("Country"))
+place = ""
+if c!="":
+    place += c
+if s != "":
+    if place!="":
+        place += ", "+s
+    else:
+        place = s
+if co != "":
+    if place!="":
+        place += ", "+co
+    else:
+        place = co
+return place
 ```
 
 #### _URI_
