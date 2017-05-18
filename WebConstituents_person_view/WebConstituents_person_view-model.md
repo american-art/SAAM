@@ -77,13 +77,13 @@ else:
 #### _LatestBirthDate_
 From column: _BeginDate_
 ``` python
-return getValue("BeginDate")
+return getValue("BeginDate")+"-12-31"
 ```
 
 #### _LatestDeathDate_
 From column: _EndDate_
 ``` python
-return getValue("EndDate")
+return getValue("EndDate")+"-12-31"
 ```
 
 #### _BirthURI_
@@ -125,26 +125,32 @@ return getValue("URI")+"/name"
 #### _GivenNameURI_
 From column: _NameURI_
 ``` python
-return getValue("URI")+"/name/givenname"
+if getValue("FirstName"):
+    return getValue("URI")+"/first_name"
+else:
+    return ""
 ```
 
 #### _SortNameURI_
 From column: _GivenNameURI_
 ``` python
-return getValue("URI")+"/name/sortname"
+return getValue("URI")+"/sortname"
 ```
 
 #### _FamilyNameURI_
 From column: _GivenNameURI_
 ``` python
-return getValue("URI")+"/name/familyname"
+if getValue("LastName"):
+    return getValue("URI")+"/last_name"
+else:
+    return ""
 ```
 
 #### _PrefixURI_
 From column: _NameURI_
 ``` python
 if getValue("NameTitle"):
-    return getValue("URI")+"/name/prefix"
+    return getValue("URI")+"/prefix"
 else:
     return ""
 ```
@@ -153,7 +159,7 @@ else:
 From column: _FamilyNameURI_
 ``` python
 if getValue("Suffix"):
-    return getValue("URI")+"/name/suffix"
+    return getValue("URI")+"/suffix"
 else:
     return ""
 ```
@@ -185,7 +191,7 @@ return "thesauri/name_type/suffix"
 #### _SortNameTypeURI_
 From column: _SortNameURI_
 ``` python
-return getValue("URI")+"/name/sortname/type"
+return "thesauri/name_type/sort_name"
 ```
 
 #### _NationalityURI_
@@ -197,7 +203,22 @@ return getValue("URI")+"/nationality"
 #### _PrimaryNameURI_
 From column: _FirstName_
 ``` python
-return getValue("URI")+"/primary_name"
+return getValue("URI")+"/name"
+```
+
+#### _EarliestBeginDate_
+From column: _BeginDate_
+``` python
+if getValue("BeginDate"):
+    return getValue("BeginDate")+"-01-01"
+else:
+    return ""
+```
+
+#### _EarliestEndDate_
+From column: _EndDate_
+``` python
+return getValue("EndDate")+"-01-01"
 ```
 
 
@@ -207,15 +228,15 @@ return getValue("URI")+"/primary_name"
 | Column | Property | Class |
 |  ----- | -------- | ----- |
 | _AlphaSort_ | `rdf:value` | `crm:E82_Actor_Appellation6`|
-| _BeginDate_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
+| _BeginDate_ | `rdfs:label` | `crm:E52_Time-Span1`|
 | _BirthDateURI_ | `uri` | `crm:E52_Time-Span1`|
 | _BirthURI_ | `uri` | `crm:E63_Beginning_of_Existence1`|
 | _DeathDateURI_ | `uri` | `crm:E52_Time-Span2`|
 | _DeathURI_ | `uri` | `crm:E64_End_of_Existence1`|
-| _DisplayBirthDate_ | `rdfs:label` | `crm:E52_Time-Span1`|
-| _DisplayDeathDate_ | `rdfs:label` | `crm:E52_Time-Span2`|
 | _DisplayName_ | `rdf:value` | `crm:E82_Actor_Appellation7`|
-| _EndDate_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span2`|
+| _EarliestBeginDate_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
+| _EarliestEndDate_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span2`|
+| _EndDate_ | `rdfs:label` | `crm:E52_Time-Span2`|
 | _FamilyNameTypeURI_ | `uri` | `crm:E55_Type3`|
 | _FamilyNameURI_ | `uri` | `crm:E82_Actor_Appellation4`|
 | _FirstName_ | `rdf:value` | `crm:E82_Actor_Appellation3`|
@@ -249,14 +270,14 @@ return getValue("URI")+"/primary_name"
 | `crm:E39_Actor1` | `crm:P131_is_identified_by` | `crm:E82_Actor_Appellation1`|
 | `crm:E39_Actor1` | `crm:P131_is_identified_by` | `crm:E82_Actor_Appellation6`|
 | `crm:E39_Actor1` | `crm:P131_is_identified_by` | `crm:E82_Actor_Appellation7`|
-| `crm:E55_Type1` | `skos:broadMatch` | `xsd:http://vocab.getty.edu/aat/300404845`|
-| `crm:E55_Type2` | `skos:broadMatch` | `xsd:http://vocab.getty.edu/aat/300404651`|
-| `crm:E55_Type3` | `skos:broadMatch` | `xsd:http://vocab.getty.edu/aat/300404652`|
-| `crm:E55_Type4` | `skos:broadMatch` | `xsd:http://vocab.getty.edu/aat/300404662`|
-| `crm:E55_Type5` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300404672`|
+| `crm:E55_Type1` | `skos:broadMatch` | `http://vocab.getty.edu/aat/300404845`|
+| `crm:E55_Type2` | `skos:broadMatch` | `http://vocab.getty.edu/aat/300404651`|
+| `crm:E55_Type3` | `skos:broadMatch` | `http://vocab.getty.edu/aat/300404652`|
+| `crm:E55_Type4` | `skos:broadMatch` | `http://vocab.getty.edu/aat/300404662`|
+| `crm:E55_Type5` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300404672`|
 | `crm:E63_Beginning_of_Existence1` | `crm:P4_has_time-span` | `crm:E52_Time-Span1`|
 | `crm:E64_End_of_Existence1` | `crm:P4_has_time-span` | `crm:E52_Time-Span2`|
-| `crm:E74_Group1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300379842`|
+| `crm:E74_Group1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300379842`|
 | `crm:E82_Actor_Appellation1` | `crm:P106_is_composed_of` | `crm:E82_Actor_Appellation2`|
 | `crm:E82_Actor_Appellation1` | `crm:P106_is_composed_of` | `crm:E82_Actor_Appellation3`|
 | `crm:E82_Actor_Appellation1` | `crm:P106_is_composed_of` | `crm:E82_Actor_Appellation4`|
@@ -266,4 +287,4 @@ return getValue("URI")+"/primary_name"
 | `crm:E82_Actor_Appellation4` | `crm:P2_has_type` | `crm:E55_Type3`|
 | `crm:E82_Actor_Appellation5` | `crm:P2_has_type` | `crm:E55_Type4`|
 | `crm:E82_Actor_Appellation6` | `crm:P2_has_type` | `crm:E55_Type5`|
-| `crm:E82_Actor_Appellation7` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300404670`|
+| `crm:E82_Actor_Appellation7` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300404670`|
