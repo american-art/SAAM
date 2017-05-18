@@ -53,13 +53,13 @@ return UM.uri_from_fields("thesauri/nationality/",getValue("Nationality"))
 #### _LatestBeginDate_
 From column: _BeginDate_
 ``` python
-return getValue("BeginDate")
+return getValue("BeginDate")+"-12-31"
 ```
 
 #### _LatestEndDate_
 From column: _EndDate_
 ``` python
-return getValue("EndDate")
+return getValue("EndDate")+"-12-31"
 ```
 
 #### _BirthURI_
@@ -86,6 +86,18 @@ From column: _DeathURI_
 return getValue("DeathURI")+"/time"
 ```
 
+#### _EarliestBeginDate_
+From column: _BeginDate_
+``` python
+return getValue("BeginDate")+"-01-01"
+```
+
+#### _EarliestEndDate_
+From column: _EndDate_
+``` python
+return getValue("EndDate")+"-01-01"
+```
+
 
 ## Selections
 
@@ -93,14 +105,15 @@ return getValue("DeathURI")+"/time"
 | Column | Property | Class |
 |  ----- | -------- | ----- |
 | _AlphaSort_ | `rdf:value` | `crm:E82_Actor_Appellation2`|
-| _BeginDate_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
+| _BeginDate_ | `rdfs:label` | `crm:E52_Time-Span1`|
 | _BirthTimeURI_ | `uri` | `crm:E52_Time-Span1`|
 | _BirthURI_ | `uri` | `crm:E63_Beginning_of_Existence1`|
 | _ConstituentURI_ | `uri` | `crm:E39_Actor1`|
 | _DeathTimeURI_ | `uri` | `crm:E52_Time-Span2`|
 | _DeathURI_ | `uri` | `crm:E64_End_of_Existence1`|
 | _DisplayName_ | `rdf:value` | `crm:E82_Actor_Appellation1`|
-| _EndDate_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span2`|
+| _EarliestBeginDate_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
+| _EarliestEndDate_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span2`|
 | _LatestBeginDate_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span1`|
 | _LatestEndDate_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span2`|
 | _NameLabel_ | `rdfs:label` | `crm:E39_Actor1`|
@@ -120,6 +133,6 @@ return getValue("DeathURI")+"/time"
 | `crm:E39_Actor1` | `crm:P131_is_identified_by` | `crm:E82_Actor_Appellation2`|
 | `crm:E63_Beginning_of_Existence1` | `crm:P4_has_time-span` | `crm:E52_Time-Span1`|
 | `crm:E64_End_of_Existence1` | `crm:P4_has_time-span` | `crm:E52_Time-Span2`|
-| `crm:E74_Group1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300379842`|
-| `crm:E82_Actor_Appellation1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300404670`|
-| `crm:E82_Actor_Appellation2` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300404672`|
+| `crm:E74_Group1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300379842`|
+| `crm:E82_Actor_Appellation1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300404670`|
+| `crm:E82_Actor_Appellation2` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300404672`|
