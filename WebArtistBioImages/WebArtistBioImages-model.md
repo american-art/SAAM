@@ -23,8 +23,9 @@ return getValue("URI")+'/image'
 ## Semantic Types
 | Column | Property | Class |
 |  ----- | -------- | ----- |
-| _ImageURI_ | `uri` | `crm:E38_Image1`|
+| _PublicCaption_ | `rdfs:label` | `crm:E38_Image1`|
 | _URI_ | `uri` | `crm:E39_Actor1`|
+| _imageUrl_ | `uri` | `crm:E38_Image1`|
 
 
 ## Links
