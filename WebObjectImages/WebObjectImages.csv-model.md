@@ -8,7 +8,7 @@
 #### _ObjectURI_
 From column: _ObjectID_
 ``` python
-return "object/id/"+SM.fingerprint_string(getValue("ObjectNumber"))
+return "object/id/"+getValue("ObjectNumber").replace(".","_").replace(",","_")
 ```
 
 
