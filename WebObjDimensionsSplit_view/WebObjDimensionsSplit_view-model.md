@@ -8,7 +8,7 @@
 #### _ObjectURI_
 From column: _ObjectID_
 ``` python
-return "object/id/"+getValue("ObjectID")
+return "object/id/"+getValue("objectnumber").replace(".","_").replace(",","_")
 ```
 
 #### _DimensionType_
