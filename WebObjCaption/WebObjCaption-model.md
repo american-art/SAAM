@@ -1,4 +1,4 @@
-# WebObjCaption.json
+# WebObjCaption.csv
 
 ## Add Column
 
@@ -38,7 +38,7 @@ Literal Type: ``
 #### _URI_
 From column: _ObjectID_
 ``` python
-return 'object/id/'+SM.fingerprint_string(getValue("objectnumber"))
+return "object/id/"+getValue("objectnumber").replace(".","_").replace(",","_")
 ```
 
 #### _ClassificationURI_
