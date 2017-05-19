@@ -18,7 +18,7 @@ Literal Type: ``
 #### _ObjectURI_
 From column: _ObjectNumber_
 ``` python
-return "object/id/"+getValue("ObjectNumber").replace(".","_")
+return "object/id/"+getValue("ObjectNumber").replace(".","_").replace(",","_")
 ```
 
 #### _DescURI_
