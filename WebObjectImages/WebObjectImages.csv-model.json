@@ -4,24 +4,24 @@
     "description": null,
     "sourceColumns": [
         {
-            "id": "HN210061",
-            "hNodeId": "HN210061",
-            "columnName": "ObjectURI"
+            "id": "HN1154",
+            "hNodeId": "HN1154",
+            "columnName": "imageUrl"
         },
         {
-            "id": "HN110058",
-            "hNodeId": "HN110058",
-            "columnName": "imageUrl"
+            "id": "HN2157",
+            "hNodeId": "HN2157",
+            "columnName": "ObjectURI"
         }
     ],
     "mappingToSourceColumns": [
         {
-            "id": "HN210061",
-            "sourceColumnId": "HN210061"
+            "id": "HN1154",
+            "sourceColumnId": "HN1154"
         },
         {
-            "id": "HN110058",
-            "sourceColumnId": "HN110058"
+            "id": "HN2157",
+            "sourceColumnId": "HN2157"
         }
     ],
     "graph": {
@@ -45,21 +45,21 @@
                 "modelIds": null
             },
             {
-                "id": "HN210061",
+                "id": "HN1154",
                 "label": {
-                    "uri": "HN210061",
+                    "uri": "HN1154",
                     "rdfsLabel": null
                 },
                 "type": "ColumnNode",
-                "hNodeId": "HN210061",
-                "columnName": "ObjectURI",
+                "hNodeId": "HN1154",
+                "columnName": "imageUrl",
                 "rdfLiteralType": null,
                 "language": "",
                 "userSemanticTypes": [
                     {
-                        "hNodeId": "HN210061",
+                        "hNodeId": "HN1154",
                         "domain": {
-                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object",
+                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E38_Image",
                             "rdfsLabel": null
                         },
                         "type": {
@@ -70,9 +70,9 @@
                         "confidenceScore": 1.0
                     },
                     {
-                        "hNodeId": "HN210061",
+                        "hNodeId": "HN1154",
                         "domain": {
-                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object",
+                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E38_Image",
                             "rdfsLabel": null
                         },
                         "type": {
@@ -87,21 +87,21 @@
                 "modelIds": null
             },
             {
-                "id": "HN110058",
+                "id": "HN2157",
                 "label": {
-                    "uri": "HN110058",
+                    "uri": "HN2157",
                     "rdfsLabel": null
                 },
                 "type": "ColumnNode",
-                "hNodeId": "HN110058",
-                "columnName": "imageUrl",
+                "hNodeId": "HN2157",
+                "columnName": "ObjectURI",
                 "rdfLiteralType": null,
                 "language": "",
                 "userSemanticTypes": [
                     {
-                        "hNodeId": "HN110058",
+                        "hNodeId": "HN2157",
                         "domain": {
-                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E38_Image",
+                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object",
                             "rdfsLabel": null
                         },
                         "type": {
@@ -112,9 +112,9 @@
                         "confidenceScore": 1.0
                     },
                     {
-                        "hNodeId": "HN110058",
+                        "hNodeId": "HN2157",
                         "domain": {
-                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E38_Image",
+                            "uri": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object",
                             "rdfsLabel": null
                         },
                         "type": {
@@ -144,7 +144,7 @@
                 "modelIds": null
             },
             {
-                "id": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1---http://isi.edu/integration/karma/dev#classLink---HN210061",
+                "id": "http://www.cidoc-crm.org/cidoc-crm/E38_Image1---http://isi.edu/integration/karma/dev#classLink---HN1154",
                 "weight": 0.01,
                 "type": "ClassInstanceLink",
                 "label": {
@@ -156,7 +156,7 @@
                 "modelIds": null
             },
             {
-                "id": "http://www.cidoc-crm.org/cidoc-crm/E38_Image1---http://isi.edu/integration/karma/dev#classLink---HN110058",
+                "id": "http://www.cidoc-crm.org/cidoc-crm/E22_Man-Made_Object1---http://isi.edu/integration/karma/dev#classLink---HN2157",
                 "weight": 0.01,
                 "type": "ClassInstanceLink",
                 "label": {
