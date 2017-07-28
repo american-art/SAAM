@@ -1,4 +1,4 @@
-# WebObjCaption.csv
+# WebObjCaption.json
 
 ## Add Column
 
@@ -29,6 +29,11 @@ Literal Type: ``
 <br/>isUri: `true`
 
 #### Literal Node: `http://vocab.getty.edu/aat/300404621`
+Literal Type: ``
+<br/>Language: ``
+<br/>isUri: `true`
+
+#### Literal Node: `"http://vocab.getty.edu/ulan/500239941"`
 Literal Type: ``
 <br/>Language: ``
 <br/>isUri: `true`
@@ -247,5 +252,6 @@ else:
 | `crm:E33_Linguistic_Object2` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300266036`|
 | `crm:E33_Linguistic_Object3` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300026687`|
 | `crm:E35_Title1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300404670`|
+| `crm:E40_Legal_Body1` | `skos:exactMatch` | `http://vocab.getty.edu/ulan/500239941`|
 | `crm:E42_Identifier1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300404670`|
 | `crm:E42_Identifier2` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300404621`|
