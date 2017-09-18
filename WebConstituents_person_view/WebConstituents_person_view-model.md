@@ -197,7 +197,7 @@ return "thesauri/name_type/sort_name"
 #### _NationalityURI_
 From column: _Code_
 ``` python
-return getValue("URI")+"/nationality"
+return UM.uri_from_fields("thesauri/nationality/",getValue("Nationality"))
 ```
 
 #### _PrimaryNameURI_
@@ -248,7 +248,7 @@ return getValue("ConstituentID")
 | _DeathURI_ | `uri` | `crm:E64_End_of_Existence1`|
 | _DisplayName_ | `rdf:value` | `crm:E82_Actor_Appellation7`|
 | _EarliestBeginDate_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span1`|
-| _EarliestEndDate_ | `crm:P82b_end_of_the_end` | `crm:E52_Time-Span2`|
+| _EarliestEndDate_ | `crm:P82a_begin_of_the_begin` | `crm:E52_Time-Span2`|
 | _EndDate_ | `rdfs:label` | `crm:E52_Time-Span2`|
 | _FamilyNameTypeURI_ | `uri` | `crm:E55_Type3`|
 | _FamilyNameURI_ | `uri` | `crm:E82_Actor_Appellation4`|
