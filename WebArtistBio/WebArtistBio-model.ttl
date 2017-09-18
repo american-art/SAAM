@@ -9,18 +9,16 @@
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix karma: <http://isi.edu/integration/karma/ontologies/model/current#> .
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix km-dev: <http://isi.edu/integration/karma/dev#> .
 
-_:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
+_:node1bqb30qrmx1 a km-dev:R2RMLMapping ;
 	km-dev:sourceName "WebArtistBio.csv" ;
-	km-dev:modelPublicationTime "1488011894321"^^xsd:long ;
+	km-dev:modelPublicationTime "1505758309238"^^xsd:long ;
 	km-dev:modelVersion "1.7" ;
-	km-dev:hasInputColumns "[[{\"columnName\":\"BioDsp\"}]]" ;
-	km-dev:hasOutputColumns "[[{\"columnName\":\"BioURI\"}],[{\"columnName\":\"BioDsp\"}],[{\"columnName\":\"BioDspValue\"}],[{\"columnName\":\"URI\"}]]" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"ConstituentID\"}],[{\"columnName\":\"BioDsp\"}],[{\"columnName\":\"PrimaryBio\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"BioDsp\"}],[{\"columnName\":\"BioURI\"}],[{\"columnName\":\"URI\"}],[{\"columnName\":\"BioDspValue\"}]]" ;
 	km-dev:hasModelLabel "WebArtistBio" ;
-	km-dev:hasBaseURI "http://localhost:8080/source/" ;
 	km-dev:hasWorksheetHistory """[
     {
         \"tags\": [\"Transformation\"],
@@ -63,7 +61,7 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
             },
             {
                 \"name\": \"inputColumns\",
-                \"value\": \"[]\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"ConstituentID\\\"}]}]\",
                 \"type\": \"hNodeIdList\"
             },
             {
@@ -100,7 +98,7 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
             },
             {
                 \"name\": \"transformationCode\",
-                \"value\": \"return getValue(\\\"URI\\\")+'/bio'\",
+                \"value\": \"if getValue(\\\"PrimaryBio\\\") == \\\"Primary\\\":\\n    return getValue(\\\"URI\\\")+'/bio'+'/primary'\\nelse:\\n    return getValue(\\\"URI\\\")+'/bio'+'/non-primary'\",
                 \"type\": \"other\"
             },
             {
@@ -115,7 +113,7 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
             },
             {
                 \"name\": \"inputColumns\",
-                \"value\": \"[]\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"PrimaryBio\\\"}]},{\\\"value\\\":[{\\\"columnName\\\":\\\"URI\\\"}]}]\",
                 \"type\": \"hNodeIdList\"
             },
             {
@@ -167,7 +165,7 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
             },
             {
                 \"name\": \"inputColumns\",
-                \"value\": \"[]\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"BioDsp\\\"}]}]\",
                 \"type\": \"hNodeIdList\"
             },
             {
@@ -199,6 +197,86 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
                     \"hasPrefix\": false,
                     \"graphLabel\": \"WebArtistBio\",
                     \"hasBaseURI\": false
+                },
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetWorksheetPropertiesCommand\"
+    },
+    {
+        \"tags\": [\"Transformation\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"properties\",
+                \"value\": {
+                    \"hasServiceProperties\": false,
+                    \"hasPrefix\": false,
+                    \"graphLabel\": \"\",
+                    \"hasGithubURL\": true,
+                    \"GithubURL\": \"https://github.com/american-art/SAAM/tree/master/WebArtistBio\",
+                    \"hasBaseURI\": false,
+                    \"baseURI\": \"\"
+                },
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetWorksheetPropertiesCommand\"
+    },
+    {
+        \"tags\": [\"Transformation\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"properties\",
+                \"value\": {
+                    \"hasServiceProperties\": false,
+                    \"hasPrefix\": false,
+                    \"graphLabel\": \"\",
+                    \"hasGithubURL\": true,
+                    \"GithubURL\": \"https://github.com/american-art/SAAM/tree/master/WebArtistBio\",
+                    \"hasBaseURI\": false,
+                    \"baseURI\": \"\"
                 },
                 \"type\": \"other\"
             },
@@ -312,86 +390,6 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
         \"commandName\": \"OrganizeColumnsCommand\"
     },
     {
-        \"tags\": [\"Transformation\"],
-        \"model\": \"new\",
-        \"inputParameters\": [
-            {
-                \"name\": \"worksheetId\",
-                \"value\": \"W\",
-                \"type\": \"worksheetId\"
-            },
-            {
-                \"name\": \"selectionName\",
-                \"value\": \"DEFAULT_TEST\",
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"properties\",
-                \"value\": {
-                    \"hasServiceProperties\": false,
-                    \"hasPrefix\": false,
-                    \"graphLabel\": \"\",
-                    \"GithubURL\": \"https://github.com/american-art/SAAM/tree/master/WebArtistBio\",
-                    \"hasGithubURL\": true,
-                    \"hasBaseURI\": false,
-                    \"baseURI\": \"\"
-                },
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"inputColumns\",
-                \"value\": \"[]\",
-                \"type\": \"hNodeIdList\"
-            },
-            {
-                \"name\": \"outputColumns\",
-                \"value\": \"[]\",
-                \"type\": \"hNodeIdList\"
-            }
-        ],
-        \"commandName\": \"SetWorksheetPropertiesCommand\"
-    },
-    {
-        \"tags\": [\"Transformation\"],
-        \"model\": \"new\",
-        \"inputParameters\": [
-            {
-                \"name\": \"worksheetId\",
-                \"value\": \"W\",
-                \"type\": \"worksheetId\"
-            },
-            {
-                \"name\": \"selectionName\",
-                \"value\": \"DEFAULT_TEST\",
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"properties\",
-                \"value\": {
-                    \"hasServiceProperties\": false,
-                    \"hasPrefix\": false,
-                    \"graphLabel\": \"\",
-                    \"hasGithubURL\": true,
-                    \"GithubURL\": \"https://github.com/american-art/SAAM/tree/master/WebArtistBio\",
-                    \"hasBaseURI\": false,
-                    \"baseURI\": \"\"
-                },
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"inputColumns\",
-                \"value\": \"[]\",
-                \"type\": \"hNodeIdList\"
-            },
-            {
-                \"name\": \"outputColumns\",
-                \"value\": \"[]\",
-                \"type\": \"hNodeIdList\"
-            }
-        ],
-        \"commandName\": \"SetWorksheetPropertiesCommand\"
-    },
-    {
         \"tags\": [\"SemanticType\"],
         \"model\": \"new\",
         \"inputParameters\": [
@@ -428,8 +426,8 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
             {
                 \"name\": \"SemanticTypesArray\",
                 \"value\": [{
-                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
                     \"isPrimary\": true,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
                     \"DomainLabel\": \"crm:E39_Actor1 (add)\",
                     \"DomainId\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor1\",
                     \"DomainUri\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor\"
@@ -501,8 +499,8 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
             {
                 \"name\": \"SemanticTypesArray\",
                 \"value\": [{
-                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
                     \"isPrimary\": true,
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
                     \"DomainLabel\": \"crm:E33_Linguistic_Object1 (add)\",
                     \"DomainId\": \"http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object1\",
                     \"DomainUri\": \"http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object\"
@@ -559,8 +557,8 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
             {
                 \"name\": \"SemanticTypesArray\",
                 \"value\": [{
-                    \"FullType\": \"http://purl.org/dc/elements/1.1/description\",
                     \"isPrimary\": true,
+                    \"FullType\": \"http://purl.org/dc/elements/1.1/description\",
                     \"DomainLabel\": \"crm:E39_Actor1\",
                     \"DomainId\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor1\",
                     \"DomainUri\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor\"
@@ -617,8 +615,8 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
             {
                 \"name\": \"SemanticTypesArray\",
                 \"value\": [{
-                    \"FullType\": \"http://www.w3.org/1999/02/22-rdf-syntax-ns#value\",
                     \"isPrimary\": true,
+                    \"FullType\": \"http://www.w3.org/1999/02/22-rdf-syntax-ns#value\",
                     \"DomainLabel\": \"crm:E33_Linguistic_Object1\",
                     \"DomainId\": \"http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object1\",
                     \"DomainUri\": \"http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object\"
@@ -654,7 +652,7 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
         \"commandName\": \"SetSemanticTypeCommand\"
     },
     {
-        \"tags\": [\"SemanticType\"],
+        \"tags\": [\"Modeling\"],
         \"model\": \"new\",
         \"inputParameters\": [
             {
@@ -696,49 +694,7 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
         \"commandName\": \"AddLiteralNodeCommand\"
     },
     {
-        \"tags\": [\"SemanticType\"],
-        \"model\": \"new\",
-        \"inputParameters\": [
-            {
-                \"name\": \"literalValue\",
-                \"value\": \"http://vocab.getty.edu/aat/300404670\",
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"literalType\",
-                \"value\": \"\",
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"language\",
-                \"value\": \"\",
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"worksheetId\",
-                \"value\": \"W\",
-                \"type\": \"worksheetId\"
-            },
-            {
-                \"name\": \"isUri\",
-                \"value\": true,
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"inputColumns\",
-                \"value\": \"[]\",
-                \"type\": \"hNodeIdList\"
-            },
-            {
-                \"name\": \"outputColumns\",
-                \"value\": \"[]\",
-                \"type\": \"hNodeIdList\"
-            }
-        ],
-        \"commandName\": \"AddLiteralNodeCommand\"
-    },
-    {
-        \"tags\": [\"SemanticType\"],
+        \"tags\": [\"Modeling\"],
         \"model\": \"new\",
         \"inputParameters\": [
             {
@@ -794,27 +750,12 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
                 \"type\": \"worksheetId\"
             },
             {
-                \"name\": \"selectionName\",
-                \"value\": \"DEFAULT_TEST\",
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"initialEdges\",
-                \"value\": [{
+                \"name\": \"edge\",
+                \"value\": {
                     \"edgeId\": \"http://www.cidoc-crm.org/cidoc-crm/P129i_is_subject_of\",
-                    \"edgeSourceId\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor1\",
-                    \"edgeTargetId\": \"http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object1\"
-                }],
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"alignmentId\",
-                \"value\": \"WSP10:WS5AL\",
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"newEdges\",
-                \"value\": [],
+                    \"edgeTargetId\": \"http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object1\",
+                    \"edgeSourceId\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor1\"
+                },
                 \"type\": \"other\"
             },
             {
@@ -828,7 +769,7 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
                 \"type\": \"hNodeIdList\"
             }
         ],
-        \"commandName\": \"ChangeInternalNodeLinksCommand\"
+        \"commandName\": \"DeleteLinkCommand\"
     },
     {
         \"tags\": [\"Modeling\"],
@@ -840,29 +781,14 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
                 \"type\": \"worksheetId\"
             },
             {
-                \"name\": \"selectionName\",
-                \"value\": \"DEFAULT_TEST\",
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"initialEdges\",
-                \"value\": [],
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"alignmentId\",
-                \"value\": \"WSP10:WS5AL\",
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"newEdges\",
-                \"value\": [{
+                \"name\": \"edge\",
+                \"value\": {
                     \"edgeTargetUri\": \"http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object\",
                     \"edgeId\": \"http://www.cidoc-crm.org/cidoc-crm/P129i_is_subject_of\",
-                    \"edgeSourceId\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor1\",
                     \"edgeTargetId\": \"http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object1\",
+                    \"edgeSourceId\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor1\",
                     \"edgeSourceUri\": \"http://www.cidoc-crm.org/cidoc-crm/E39_Actor\"
-                }],
+                },
                 \"type\": \"other\"
             },
             {
@@ -876,7 +802,7 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
                 \"type\": \"hNodeIdList\"
             }
         ],
-        \"commandName\": \"ChangeInternalNodeLinksCommand\"
+        \"commandName\": \"AddLinkCommand\"
     },
     {
         \"tags\": [\"Modeling\"],
@@ -888,24 +814,14 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
                 \"type\": \"worksheetId\"
             },
             {
-                \"name\": \"selectionName\",
-                \"value\": \"DEFAULT_TEST\",
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"initialEdges\",
-                \"value\": [],
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"newEdges\",
-                \"value\": [{
+                \"name\": \"edge\",
+                \"value\": {
                     \"edgeTargetUri\": \"http://vocab.getty.edu/aat/300404670\",
                     \"edgeId\": \"http://www.cidoc-crm.org/cidoc-crm/P2_has_type\",
-                    \"edgeSourceId\": \"http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object1\",
                     \"edgeTargetId\": \"http://vocab.getty.edu/aat/3004046701\",
+                    \"edgeSourceId\": \"http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object1\",
                     \"edgeSourceUri\": \"http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object\"
-                }],
+                },
                 \"type\": \"other\"
             },
             {
@@ -919,7 +835,7 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
                 \"type\": \"hNodeIdList\"
             }
         ],
-        \"commandName\": \"ChangeInternalNodeLinksCommand\"
+        \"commandName\": \"AddLinkCommand\"
     },
     {
         \"tags\": [\"Modeling\"],
@@ -931,24 +847,14 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
                 \"type\": \"worksheetId\"
             },
             {
-                \"name\": \"selectionName\",
-                \"value\": \"DEFAULT_TEST\",
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"initialEdges\",
-                \"value\": [],
-                \"type\": \"other\"
-            },
-            {
-                \"name\": \"newEdges\",
-                \"value\": [{
+                \"name\": \"edge\",
+                \"value\": {
                     \"edgeTargetUri\": \"http://vocab.getty.edu/aat/300404670\",
                     \"edgeId\": \"http://www.cidoc-crm.org/cidoc-crm/P2_has_type\",
-                    \"edgeSourceId\": \"http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object1\",
                     \"edgeTargetId\": \"http://vocab.getty.edu/aat/3004046702\",
+                    \"edgeSourceId\": \"http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object1\",
                     \"edgeSourceUri\": \"http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object\"
-                }],
+                },
                 \"type\": \"other\"
             },
             {
@@ -962,138 +868,138 @@ _:node1b9q6n7hhx1 a km-dev:R2RMLMapping ;
                 \"type\": \"hNodeIdList\"
             }
         ],
-        \"commandName\": \"ChangeInternalNodeLinksCommand\"
+        \"commandName\": \"AddLinkCommand\"
     }
 ]""" .
 
-km-dev:TriplesMap_6d22e13d-6cc5-4c45-8466-544aef475852 a rr:TriplesMap .
+km-dev:TriplesMap_855c69e6-8326-4532-bab7-003391a3cada a rr:TriplesMap .
 
-_:node1b9q6n7hhx1 km-dev:hasTriplesMap km-dev:TriplesMap_6d22e13d-6cc5-4c45-8466-544aef475852 .
+_:node1bqb30qrmx1 km-dev:hasTriplesMap km-dev:TriplesMap_855c69e6-8326-4532-bab7-003391a3cada .
 
-km-dev:TriplesMap_6d22e13d-6cc5-4c45-8466-544aef475852 km-dev:isPartOfMapping _:node1b9q6n7hhx1 .
+km-dev:TriplesMap_855c69e6-8326-4532-bab7-003391a3cada km-dev:isPartOfMapping _:node1bqb30qrmx1 .
 
-_:node1b9q6n7hhx2 rr:tableName "WebArtistBio.csv" ;
+_:node1bqb30qrmx2 rr:tableName "WebArtistBio.csv" ;
 	a rr:LogicalTable ;
-	km-dev:isPartOfMapping _:node1b9q6n7hhx1 .
+	km-dev:isPartOfMapping _:node1bqb30qrmx1 .
 
-_:node1b9q6n7hhx1 km-dev:hasLogicalTable _:node1b9q6n7hhx2 .
+_:node1bqb30qrmx1 km-dev:hasLogicalTable _:node1bqb30qrmx2 .
 
-km-dev:TriplesMap_6d22e13d-6cc5-4c45-8466-544aef475852 rr:logicalTable _:node1b9q6n7hhx2 ;
-	rr:subjectMap _:node1b9q6n7hhx3 .
+km-dev:TriplesMap_855c69e6-8326-4532-bab7-003391a3cada rr:logicalTable _:node1bqb30qrmx2 ;
+	rr:subjectMap _:node1bqb30qrmx3 .
 
-_:node1b9q6n7hhx1 km-dev:hasSubjectMap _:node1b9q6n7hhx3 .
+_:node1bqb30qrmx1 km-dev:hasSubjectMap _:node1bqb30qrmx3 .
 
-_:node1b9q6n7hhx3 km-dev:isPartOfMapping _:node1b9q6n7hhx1 ;
+_:node1bqb30qrmx3 km-dev:isPartOfMapping _:node1bqb30qrmx1 ;
 	a rr:SubjectMap ;
 	km-dev:alignmentNodeId "http://www.cidoc-crm.org/cidoc-crm/E39_Actor1" ;
 	rr:class crm:E39_Actor ;
 	rr:template "{URI}" ;
 	a km-dev:steinerTreeRootNode .
 
-km-dev:PredicateObjectMap_f8c0634c-2e30-4399-93b6-ae88bbc220c7 rr:predicate crm:P129i_is_subject_of .
+km-dev:PredicateObjectMap_1ace071e-6b13-4bf9-b96a-38a6eb372f31 rr:predicate crm:P129i_is_subject_of .
 
-km-dev:RefObjectMap_2c5a177e-ec79-4410-a72a-92ed510c304f a rr:RefObjectMap , rr:ObjectMap ;
-	rr:parentTriplesMap km-dev:TriplesMap_81bfa6b7-12cf-4a40-9bd1-9da9cc11be6a ;
-	km-dev:isPartOfMapping _:node1b9q6n7hhx1 .
+km-dev:RefObjectMap_fd57cf79-722b-410d-8118-a9bbfa31f61a a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_a1ef8d35-83ab-4dd0-8990-4383372fe0f1 ;
+	km-dev:isPartOfMapping _:node1bqb30qrmx1 .
 
-_:node1b9q6n7hhx1 km-dev:hasObjectMap km-dev:RefObjectMap_2c5a177e-ec79-4410-a72a-92ed510c304f .
+_:node1bqb30qrmx1 km-dev:hasObjectMap km-dev:RefObjectMap_fd57cf79-722b-410d-8118-a9bbfa31f61a .
 
-km-dev:PredicateObjectMap_f8c0634c-2e30-4399-93b6-ae88bbc220c7 rr:objectMap km-dev:RefObjectMap_2c5a177e-ec79-4410-a72a-92ed510c304f .
+km-dev:PredicateObjectMap_1ace071e-6b13-4bf9-b96a-38a6eb372f31 rr:objectMap km-dev:RefObjectMap_fd57cf79-722b-410d-8118-a9bbfa31f61a .
 
-km-dev:TriplesMap_6d22e13d-6cc5-4c45-8466-544aef475852 rr:predicateObjectMap km-dev:PredicateObjectMap_f8c0634c-2e30-4399-93b6-ae88bbc220c7 .
+km-dev:TriplesMap_855c69e6-8326-4532-bab7-003391a3cada rr:predicateObjectMap km-dev:PredicateObjectMap_1ace071e-6b13-4bf9-b96a-38a6eb372f31 .
 
-km-dev:PredicateObjectMap_f8c0634c-2e30-4399-93b6-ae88bbc220c7 a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1b9q6n7hhx1 .
+km-dev:PredicateObjectMap_1ace071e-6b13-4bf9-b96a-38a6eb372f31 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1bqb30qrmx1 .
 
-_:node1b9q6n7hhx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f8c0634c-2e30-4399-93b6-ae88bbc220c7 .
+_:node1bqb30qrmx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_1ace071e-6b13-4bf9-b96a-38a6eb372f31 .
 
-km-dev:PredicateObjectMap_02ba34f4-252b-47dc-aad9-e3551c60f81b rr:predicate dc:description .
+km-dev:PredicateObjectMap_be2ed39e-6706-4eaa-a6ba-5092c2113a15 rr:predicate dc:description .
 
-_:node1b9q6n7hhx4 rr:column "BioDsp" ;
+_:node1bqb30qrmx4 rr:column "BioDsp" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1b9q6n7hhx1 .
+	km-dev:isPartOfMapping _:node1bqb30qrmx1 .
 
-_:node1b9q6n7hhx1 km-dev:hasObjectMap _:node1b9q6n7hhx4 .
+_:node1bqb30qrmx1 km-dev:hasObjectMap _:node1bqb30qrmx4 .
 
-km-dev:PredicateObjectMap_02ba34f4-252b-47dc-aad9-e3551c60f81b rr:objectMap _:node1b9q6n7hhx4 .
+km-dev:PredicateObjectMap_be2ed39e-6706-4eaa-a6ba-5092c2113a15 rr:objectMap _:node1bqb30qrmx4 .
 
-km-dev:TriplesMap_6d22e13d-6cc5-4c45-8466-544aef475852 rr:predicateObjectMap km-dev:PredicateObjectMap_02ba34f4-252b-47dc-aad9-e3551c60f81b .
+km-dev:TriplesMap_855c69e6-8326-4532-bab7-003391a3cada rr:predicateObjectMap km-dev:PredicateObjectMap_be2ed39e-6706-4eaa-a6ba-5092c2113a15 .
 
-km-dev:PredicateObjectMap_02ba34f4-252b-47dc-aad9-e3551c60f81b a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1b9q6n7hhx1 .
+km-dev:PredicateObjectMap_be2ed39e-6706-4eaa-a6ba-5092c2113a15 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1bqb30qrmx1 .
 
-_:node1b9q6n7hhx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_02ba34f4-252b-47dc-aad9-e3551c60f81b .
+_:node1bqb30qrmx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_be2ed39e-6706-4eaa-a6ba-5092c2113a15 .
 
-km-dev:TriplesMap_81bfa6b7-12cf-4a40-9bd1-9da9cc11be6a a rr:TriplesMap .
+km-dev:TriplesMap_a1ef8d35-83ab-4dd0-8990-4383372fe0f1 a rr:TriplesMap .
 
-_:node1b9q6n7hhx1 km-dev:hasTriplesMap km-dev:TriplesMap_81bfa6b7-12cf-4a40-9bd1-9da9cc11be6a .
+_:node1bqb30qrmx1 km-dev:hasTriplesMap km-dev:TriplesMap_a1ef8d35-83ab-4dd0-8990-4383372fe0f1 .
 
-km-dev:TriplesMap_81bfa6b7-12cf-4a40-9bd1-9da9cc11be6a km-dev:isPartOfMapping _:node1b9q6n7hhx1 .
+km-dev:TriplesMap_a1ef8d35-83ab-4dd0-8990-4383372fe0f1 km-dev:isPartOfMapping _:node1bqb30qrmx1 .
 
-_:node1b9q6n7hhx5 rr:tableName "WebArtistBio.csv" ;
+_:node1bqb30qrmx5 rr:tableName "WebArtistBio.csv" ;
 	a rr:LogicalTable ;
-	km-dev:isPartOfMapping _:node1b9q6n7hhx1 .
+	km-dev:isPartOfMapping _:node1bqb30qrmx1 .
 
-_:node1b9q6n7hhx1 km-dev:hasLogicalTable _:node1b9q6n7hhx5 .
+_:node1bqb30qrmx1 km-dev:hasLogicalTable _:node1bqb30qrmx5 .
 
-km-dev:TriplesMap_81bfa6b7-12cf-4a40-9bd1-9da9cc11be6a rr:logicalTable _:node1b9q6n7hhx5 ;
-	rr:subjectMap _:node1b9q6n7hhx6 .
+km-dev:TriplesMap_a1ef8d35-83ab-4dd0-8990-4383372fe0f1 rr:logicalTable _:node1bqb30qrmx5 ;
+	rr:subjectMap _:node1bqb30qrmx6 .
 
-_:node1b9q6n7hhx1 km-dev:hasSubjectMap _:node1b9q6n7hhx6 .
+_:node1bqb30qrmx1 km-dev:hasSubjectMap _:node1bqb30qrmx6 .
 
-_:node1b9q6n7hhx6 km-dev:isPartOfMapping _:node1b9q6n7hhx1 ;
+_:node1bqb30qrmx6 km-dev:isPartOfMapping _:node1bqb30qrmx1 ;
 	a rr:SubjectMap ;
 	km-dev:alignmentNodeId "http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object1" ;
 	rr:class crm:E33_Linguistic_Object ;
 	rr:template "{BioURI}" .
 
-km-dev:PredicateObjectMap_b9ae0263-cf03-4b58-b385-9101ead129d1 rr:predicate rdf:value .
+km-dev:PredicateObjectMap_2cb97b18-4e5f-4a2b-9c13-c4874c69d386 rr:predicate rdf:value .
 
-_:node1b9q6n7hhx7 rr:column "BioDsp" ;
+_:node1bqb30qrmx7 rr:column "BioDsp" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1b9q6n7hhx1 .
+	km-dev:isPartOfMapping _:node1bqb30qrmx1 .
 
-_:node1b9q6n7hhx1 km-dev:hasObjectMap _:node1b9q6n7hhx7 .
+_:node1bqb30qrmx1 km-dev:hasObjectMap _:node1bqb30qrmx7 .
 
-km-dev:PredicateObjectMap_b9ae0263-cf03-4b58-b385-9101ead129d1 rr:objectMap _:node1b9q6n7hhx7 .
+km-dev:PredicateObjectMap_2cb97b18-4e5f-4a2b-9c13-c4874c69d386 rr:objectMap _:node1bqb30qrmx7 .
 
-km-dev:TriplesMap_81bfa6b7-12cf-4a40-9bd1-9da9cc11be6a rr:predicateObjectMap km-dev:PredicateObjectMap_b9ae0263-cf03-4b58-b385-9101ead129d1 .
+km-dev:TriplesMap_a1ef8d35-83ab-4dd0-8990-4383372fe0f1 rr:predicateObjectMap km-dev:PredicateObjectMap_2cb97b18-4e5f-4a2b-9c13-c4874c69d386 .
 
-km-dev:PredicateObjectMap_b9ae0263-cf03-4b58-b385-9101ead129d1 a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1b9q6n7hhx1 .
+km-dev:PredicateObjectMap_2cb97b18-4e5f-4a2b-9c13-c4874c69d386 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1bqb30qrmx1 .
 
-_:node1b9q6n7hhx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_b9ae0263-cf03-4b58-b385-9101ead129d1 .
+_:node1bqb30qrmx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_2cb97b18-4e5f-4a2b-9c13-c4874c69d386 .
 
-km-dev:PredicateObjectMap_977d9e2a-d6aa-43a6-be91-57b90800aac4 rr:predicate crm:P2_has_type .
+km-dev:PredicateObjectMap_95cc5785-064e-41fd-8cc4-a107605fcf7c rr:predicate crm:P2_has_type .
 
-_:node1b9q6n7hhx8 rr:constant <http://vocab.getty.edu/aat/300080102> ;
+_:node1bqb30qrmx8 rr:constant <http://vocab.getty.edu/aat/300080102> ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1b9q6n7hhx1 .
+	km-dev:isPartOfMapping _:node1bqb30qrmx1 .
 
-_:node1b9q6n7hhx1 km-dev:hasObjectMap _:node1b9q6n7hhx8 .
+_:node1bqb30qrmx1 km-dev:hasObjectMap _:node1bqb30qrmx8 .
 
-km-dev:PredicateObjectMap_977d9e2a-d6aa-43a6-be91-57b90800aac4 rr:objectMap _:node1b9q6n7hhx8 .
+km-dev:PredicateObjectMap_95cc5785-064e-41fd-8cc4-a107605fcf7c rr:objectMap _:node1bqb30qrmx8 .
 
-km-dev:TriplesMap_81bfa6b7-12cf-4a40-9bd1-9da9cc11be6a rr:predicateObjectMap km-dev:PredicateObjectMap_977d9e2a-d6aa-43a6-be91-57b90800aac4 .
+km-dev:TriplesMap_a1ef8d35-83ab-4dd0-8990-4383372fe0f1 rr:predicateObjectMap km-dev:PredicateObjectMap_95cc5785-064e-41fd-8cc4-a107605fcf7c .
 
-km-dev:PredicateObjectMap_977d9e2a-d6aa-43a6-be91-57b90800aac4 a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1b9q6n7hhx1 .
+km-dev:PredicateObjectMap_95cc5785-064e-41fd-8cc4-a107605fcf7c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1bqb30qrmx1 .
 
-_:node1b9q6n7hhx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_977d9e2a-d6aa-43a6-be91-57b90800aac4 .
+_:node1bqb30qrmx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_95cc5785-064e-41fd-8cc4-a107605fcf7c .
 
-km-dev:PredicateObjectMap_820f9fb3-6e03-4b20-a057-46b4da249ea9 rr:predicate crm:P2_has_type .
+km-dev:PredicateObjectMap_c60b8ede-6634-47f2-857b-9fcf60d144af rr:predicate crm:P2_has_type .
 
-_:node1b9q6n7hhx9 rr:constant <http://vocab.getty.edu/aat/300404670> ;
+_:node1bqb30qrmx9 rr:constant <http://vocab.getty.edu/aat/300404670> ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1b9q6n7hhx1 .
+	km-dev:isPartOfMapping _:node1bqb30qrmx1 .
 
-_:node1b9q6n7hhx1 km-dev:hasObjectMap _:node1b9q6n7hhx9 .
+_:node1bqb30qrmx1 km-dev:hasObjectMap _:node1bqb30qrmx9 .
 
-km-dev:PredicateObjectMap_820f9fb3-6e03-4b20-a057-46b4da249ea9 rr:objectMap _:node1b9q6n7hhx9 .
+km-dev:PredicateObjectMap_c60b8ede-6634-47f2-857b-9fcf60d144af rr:objectMap _:node1bqb30qrmx9 .
 
-km-dev:TriplesMap_81bfa6b7-12cf-4a40-9bd1-9da9cc11be6a rr:predicateObjectMap km-dev:PredicateObjectMap_820f9fb3-6e03-4b20-a057-46b4da249ea9 .
+km-dev:TriplesMap_a1ef8d35-83ab-4dd0-8990-4383372fe0f1 rr:predicateObjectMap km-dev:PredicateObjectMap_c60b8ede-6634-47f2-857b-9fcf60d144af .
 
-km-dev:PredicateObjectMap_820f9fb3-6e03-4b20-a057-46b4da249ea9 a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1b9q6n7hhx1 .
+km-dev:PredicateObjectMap_c60b8ede-6634-47f2-857b-9fcf60d144af a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1bqb30qrmx1 .
 
-_:node1b9q6n7hhx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_820f9fb3-6e03-4b20-a057-46b4da249ea9 .
+_:node1bqb30qrmx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_c60b8ede-6634-47f2-857b-9fcf60d144af .
