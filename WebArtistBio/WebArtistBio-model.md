@@ -24,7 +24,10 @@ return 'constituent/id/'+getValue("ConstituentID")
 #### _BioURI_
 From column: _URI_
 ``` python
-return getValue("URI")+'/bio'
+if getValue("PrimaryBio") == "Primary":
+    return getValue("URI")+'/bio'+'/primary'
+else:
+    return getValue("URI")+'/bio'+'/non-primary'
 ```
 
 #### _BioDspValue_
@@ -48,6 +51,6 @@ return getValue("BioDsp")
 ## Links
 | From | Property | To |
 |  --- | -------- | ---|
-| `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300080102`|
-| `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `xsd:http://vocab.getty.edu/aat/300404670`|
+| `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300080102`|
+| `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300404670`|
 | `crm:E39_Actor1` | `crm:P129i_is_subject_of` | `crm:E33_Linguistic_Object1`|
