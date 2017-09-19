@@ -42,7 +42,7 @@ return getValue("URI")+'/birth'
 #### _BirthLocationURI_
 From column: _URI_
 ``` python
-return UM.uri_from_fields("thesauri/place/",getValue("City"))
+return UM.uri_from_fields("thesauri/place/",getValue("BirthPlace"))
 ```
 
 
