@@ -42,7 +42,7 @@ return getValue("URI")+'/death'
 #### _DeathLocationURI_
 From column: _DeathURI_
 ``` python
-return UM.uri_from_fields("thesauri/place/",getValue("City"))
+return UM.uri_from_fields("thesauri/place/",getValue("DeathPlace"))
 ```
 
 
