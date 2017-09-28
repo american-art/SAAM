@@ -42,7 +42,6 @@ return getValue("BioDsp")
 ## Semantic Types
 | Column | Property | Class |
 |  ----- | -------- | ----- |
-| _BioDsp_ | `dc:description` | `crm:E39_Actor1`|
 | _BioDspValue_ | `rdf:value` | `crm:E33_Linguistic_Object1`|
 | _BioURI_ | `uri` | `crm:E33_Linguistic_Object1`|
 | _URI_ | `uri` | `crm:E39_Actor1`|
