@@ -25,7 +25,7 @@ return name
 #### _AltNameURI_
 From column: _LastName_
 ``` python
-return UM.uri_from_fields(getValue("ConstituentURI")+"/",getValue("NameType"))
+return UM.uri_from_fields(UM.uri_from_fields(getValue("ConstituentURI")+"/", getValue("NameType")) + "/", getValue("Name"))
 ```
 
 #### _NameTypeURI_
