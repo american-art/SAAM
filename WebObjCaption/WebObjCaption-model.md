@@ -148,7 +148,7 @@ else:
 #### _OwnerURI_
 From column: _objectnumber_
 ``` python
-return "http://data.americanartcollaborative.org/saam"
+return "http://data.americanart.si.edu"
 ```
 
 #### _OwnerLabel_
