@@ -18,7 +18,7 @@ Literal Type: ``
 #### _ObjectURI_
 From column: _ObjectNumber_
 ``` python
-return "object/id/"+getValue("ObjectNumber").replace(".","_").replace(",","_")
+return "object/id/"+getValue("ObjectNumber").strip()
 ```
 
 #### _DescURI_
@@ -45,5 +45,5 @@ else:
 | From | Property | To |
 |  --- | -------- | ---|
 | `crm:E22_Man-Made_Object1` | `crm:P129i_is_subject_of` | `crm:E33_Linguistic_Object1`|
-| `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300080091`|
 | `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300404670`|
+| `crm:E33_Linguistic_Object1` | `crm:P2_has_type` | `http://vocab.getty.edu/aat/300080091`|
