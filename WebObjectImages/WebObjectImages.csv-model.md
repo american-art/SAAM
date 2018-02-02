@@ -8,7 +8,7 @@
 #### _ObjectURI_
 From column: _ObjectID_
 ``` python
-return "object/id/"+getValue("ObjectNumber").replace(".","_").replace(",","_")
+return "object/id/"+getValue("ObjectNumber").strip()
 ```
 
 
