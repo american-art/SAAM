@@ -1,4 +1,4 @@
-# WebObjCaption.csv
+# WebObjCaption.json
 
 ## Add Column
 
