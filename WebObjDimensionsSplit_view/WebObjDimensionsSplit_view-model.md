@@ -57,7 +57,6 @@ return UM.uri_from_fields("thesauri/dimension_unit/",getValue("type")[-2:])
 | _DimensionType_ | `skos:prefLabel` | `crm:E55_Type1`|
 | _DimensionURI_ | `uri` | `crm:E54_Dimension1`|
 | _DimensionUnit_ | `skos:prefLabel` | `crm:E58_Measurement_Unit1`|
-| _Element_ | `rdfs:label` | `crm:E54_Dimension1`|
 | _Element_ | `rdfs:label` | `crm:E18_Physical_Thing1`|
 | _ObjectURI_ | `uri` | `crm:E22_Man-Made_Object1`|
 | _PartURI_ | `uri` | `crm:E18_Physical_Thing1`|
