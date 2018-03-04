@@ -8,7 +8,7 @@
 #### _URI_
 From column: _ObjectID_
 ``` python
-return "object/id/"+getValue("objectnumber").replace(".","_").replace(",","_")
+return "object/id/"+getValue("objectnumber")
 ```
 
 #### _ArtistURI_
